@@ -21,23 +21,30 @@ window.addEventListener('scroll', handleNavbarScroll);
 
 // ===== MOBILE MENU TOGGLE =====
 navToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+    const isOpen = navMenu.classList.toggle('active');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    // Update aria-expanded for accessibility
+    navToggle.setAttribute('aria-expanded', isOpen);
+    navToggle.setAttribute('aria-label', isOpen ? 'Chiudi menu' : 'Apri menu');
 });
+
+// Helper function to close menu and reset accessibility attributes
+function closeMenu() {
+    navMenu.classList.remove('active');
+    document.body.style.overflow = '';
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Apri menu');
+}
 
 // Close menu when clicking a link
 navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        document.body.style.overflow = '';
-    });
+    link.addEventListener('click', closeMenu);
 });
 
 // Close menu when clicking outside
 document.addEventListener('click', (e) => {
     if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
-        navMenu.classList.remove('active');
-        document.body.style.overflow = '';
+        closeMenu();
     }
 });
 
@@ -458,10 +465,9 @@ navToggle.addEventListener('click', () => {
 });
 
 menuBackdrop.addEventListener('click', () => {
-    navMenu.classList.remove('active');
+    closeMenu();
     menuBackdrop.style.opacity = '0';
     menuBackdrop.style.visibility = 'hidden';
-    document.body.style.overflow = '';
 });
 
 // Close menu on link click (update existing)

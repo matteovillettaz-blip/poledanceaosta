@@ -516,7 +516,7 @@ ul {
     transition: var(--transition-slow);
     position: relative;
     border: 2px solid var(--border-color);
-    overflow: hidden;
+    overflow: visible;
 }
 
 /* Decorative corner accent */
@@ -545,6 +545,7 @@ ul {
 .corso-card.featured {
     border-color: var(--primary-color);
     background: linear-gradient(to bottom, rgba(155, 77, 150, 0.05), transparent);
+    margin-top: 16px;
 }
 
 .corso-card.featured::before {
@@ -553,7 +554,7 @@ ul {
 
 .corso-badge {
     position: absolute;
-    top: -12px;
+    top: -14px;
     right: 20px;
     background: linear-gradient(135deg, var(--primary-color), var(--accent-gold));
     color: var(--text-white);
@@ -564,6 +565,7 @@ ul {
     text-transform: uppercase;
     letter-spacing: 1.5px;
     box-shadow: 0 4px 15px rgba(155, 77, 150, 0.3);
+    z-index: 10;
 }
 
 .corso-icon {
@@ -801,6 +803,7 @@ ul {
     transform: scale(1.05);
     background: linear-gradient(to bottom, rgba(212, 175, 55, 0.03), transparent);
     box-shadow: var(--shadow-md), var(--shadow-gold-glow);
+    margin-top: 16px;
 }
 
 .prezzo-card.featured:hover {
@@ -822,6 +825,7 @@ ul {
     text-transform: uppercase;
     letter-spacing: 1.5px;
     box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    z-index: 10;
 }
 
 .prezzo-card h3 {
@@ -1297,15 +1301,17 @@ ul {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 80%;
-        max-width: 400px;
+        width: 85%;
+        max-width: 380px;
         height: 100vh;
-        background: var(--text-white);
+        height: 100dvh;
+        background: linear-gradient(180deg, var(--text-white) 0%, var(--background-light) 100%);
         flex-direction: column;
         justify-content: center;
-        gap: 24px;
-        transition: var(--transition);
-        box-shadow: var(--shadow-lg);
+        gap: 8px;
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
+        padding: 60px 0;
     }
 
     .nav-menu.active {
@@ -1315,11 +1321,71 @@ ul {
     .nav-menu .nav-link {
         color: var(--text-dark);
         font-size: 1.1rem;
+        padding: 16px 40px;
+        display: block;
+        border-radius: 0;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    .nav-menu .nav-link:hover,
+    .nav-menu .nav-link.active {
+        background: rgba(155, 77, 150, 0.08);
+        color: var(--primary-color);
+    }
+
+    .nav-menu .nav-link::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0;
+        height: 60%;
+        background: var(--primary-color);
+        border-radius: 0 4px 4px 0;
+        transition: width 0.3s ease;
+    }
+
+    .nav-menu .nav-link:hover::before,
+    .nav-menu .nav-link.active::before {
+        width: 4px;
+    }
+
+    .nav-menu .nav-link.cta-button {
+        margin: 20px 30px 0;
+        padding: 16px 32px;
+        text-align: center;
+        border-radius: 14px;
+        background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+        color: var(--text-white) !important;
+        box-shadow: 0 4px 16px rgba(155, 77, 150, 0.3);
+    }
+
+    .nav-menu .nav-link.cta-button::before {
+        display: none;
+    }
+
+    .nav-menu .nav-link.cta-button:hover {
+        background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+        transform: translateY(-2px);
     }
 
     .nav-toggle {
         display: flex;
         z-index: 1001;
+        width: 44px;
+        height: 44px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    .navbar.scrolled .nav-toggle {
+        background: rgba(0, 0, 0, 0.05);
     }
 
     .hero-title {
@@ -1652,5 +1718,651 @@ ul {
     a[href^="mailto"] {
         min-height: 48px;
         min-width: 48px;
+    }
+}
+
+/* ===== ACCESSIBILITY IMPROVEMENTS ===== */
+
+/* Skip to content link */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-color);
+    color: var(--text-white);
+    padding: 12px 24px;
+    border-radius: 0 0 8px 8px;
+    z-index: 10000;
+    font-weight: 600;
+    text-decoration: none;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 3px solid var(--accent-gold);
+    outline-offset: 2px;
+}
+
+/* Enhanced focus states for all interactive elements */
+*:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
+.btn:focus-visible {
+    outline: 3px solid var(--accent-gold);
+    outline-offset: 3px;
+    box-shadow: 0 0 0 6px rgba(212, 175, 55, 0.25);
+}
+
+.nav-link:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+.form-group input:focus-visible,
+.form-group select:focus-visible,
+.form-group textarea:focus-visible {
+    outline: none; /* Already has custom focus styling */
+}
+
+.tab-btn:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.social-link:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
+/* ===== CARD ALIGNMENT FIX ===== */
+
+/* Make corso cards flex with buttons at bottom */
+.corso-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.corso-card p {
+    flex-grow: 1;
+}
+
+.corso-card .btn {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+/* Make prezzo cards equal height */
+.prezzi-grid {
+    align-items: stretch;
+}
+
+.prezzo-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.prezzo-features {
+    flex-grow: 1;
+}
+
+.prezzo-card .btn {
+    margin-top: auto;
+}
+
+/* ===== MODERN MOBILE REDESIGN ===== */
+
+/* Mobile Hero - More impactful */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 100svh; /* Use small viewport height for mobile */
+        padding-bottom: 80px;
+    }
+
+    .hero::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 150px;
+        background: linear-gradient(to top, rgba(26, 26, 26, 0.95), transparent);
+        pointer-events: none;
+    }
+
+    .hero-content {
+        padding: 0 24px;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+        line-height: 1.2;
+        margin-bottom: 12px;
+    }
+
+    .hero-title span {
+        font-size: 2.8rem;
+        line-height: 1.1;
+    }
+
+    .hero-title::after {
+        width: 50px;
+        height: 3px;
+        margin: 20px auto 0;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 32px;
+        opacity: 0.85;
+        max-width: 280px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        gap: 12px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        padding: 16px 24px;
+        font-size: 0.85rem;
+        border-radius: 16px;
+    }
+
+    .hero-buttons .btn-secondary {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .scroll-indicator {
+        bottom: 100px;
+        font-size: 1.2rem;
+        opacity: 0.6;
+    }
+
+    /* Modern Section Styling */
+    section {
+        padding: 70px 0;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+        margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 32px;
+        padding: 0 10px;
+    }
+
+    .container {
+        padding: 0 20px;
+    }
+
+    /* Modern Cards - Glassmorphism effect */
+    .corso-card,
+    .prezzo-card,
+    .istruttore-card {
+        border-radius: 20px;
+        padding: 28px 24px;
+        border: 1px solid rgba(155, 77, 150, 0.1);
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .corso-card.featured {
+        background: linear-gradient(135deg, rgba(155, 77, 150, 0.08), rgba(212, 175, 55, 0.05));
+        border: 1px solid rgba(155, 77, 150, 0.2);
+    }
+
+    .corso-icon {
+        width: 64px;
+        height: 64px;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .corso-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+    }
+
+    .corso-card p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 16px;
+    }
+
+    .corso-features {
+        margin-bottom: 20px;
+    }
+
+    .corso-features li {
+        padding: 6px 0;
+        font-size: 0.85rem;
+    }
+
+    .corso-badge {
+        top: -10px;
+        right: 16px;
+        padding: 6px 14px;
+        font-size: 0.65rem;
+        border-radius: 20px;
+    }
+
+    /* Modern Buttons */
+    .btn {
+        border-radius: 14px;
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
+        font-weight: 600;
+    }
+
+    .btn-outline {
+        border-width: 1.5px;
+    }
+
+    .btn-primary {
+        box-shadow: 0 4px 16px rgba(155, 77, 150, 0.3);
+    }
+
+    /* About Section Mobile */
+    .about {
+        padding: 60px 0;
+    }
+
+    .about-text h2 {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .about-text p {
+        font-size: 0.95rem;
+        text-align: center;
+    }
+
+    .about-stats {
+        gap: 12px;
+        margin-top: 32px;
+    }
+
+    .stat {
+        padding: 20px 16px;
+        border-radius: 16px;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 0.7rem;
+    }
+
+    .about-image {
+        margin-top: 40px;
+    }
+
+    .about-image::before {
+        display: none; /* Hide decorative border on mobile */
+    }
+
+    .image-placeholder {
+        height: 280px;
+        border-radius: 20px;
+    }
+
+    /* Istruttori Mobile */
+    .istruttore-card {
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .istruttore-image .image-placeholder {
+        height: 220px;
+        border-radius: 0;
+    }
+
+    .istruttore-info {
+        padding: 24px 20px;
+    }
+
+    .istruttore-info h3 {
+        font-size: 1.2rem;
+    }
+
+    /* Schedule Mobile */
+    .schedule-tabs {
+        gap: 8px;
+        padding: 0 10px;
+        overflow-x: auto;
+        justify-content: flex-start;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-bottom: 10px;
+    }
+
+    .schedule-tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .tab-btn {
+        padding: 12px 18px;
+        font-size: 0.8rem;
+        border-radius: 12px;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .schedule-item {
+        border-radius: 16px;
+        padding: 16px;
+        margin-bottom: 10px;
+    }
+
+    .schedule-item .time {
+        font-size: 0.9rem;
+    }
+
+    .schedule-item .course {
+        font-size: 1rem;
+        margin: 4px 0;
+    }
+
+    .schedule-item .instructor {
+        font-size: 0.85rem;
+    }
+
+    /* Prezzi Mobile */
+    .prezzi-grid {
+        gap: 16px;
+    }
+
+    .prezzo-card {
+        border-radius: 20px;
+        padding: 32px 24px;
+    }
+
+    .prezzo-card.featured {
+        transform: none;
+        border: 2px solid var(--accent-gold);
+    }
+
+    .prezzo-badge {
+        top: -12px;
+        padding: 6px 16px;
+        font-size: 0.65rem;
+        border-radius: 20px;
+    }
+
+    .prezzo-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .prezzo-amount .price {
+        font-size: 2.8rem;
+    }
+
+    .prezzo-features li {
+        font-size: 0.85rem;
+        padding: 8px 0;
+    }
+
+    /* Testimonials Mobile - Modern card slider */
+    .testimonials {
+        padding: 70px 0;
+    }
+
+    .testimonials .section-title {
+        font-size: 1.6rem;
+    }
+
+    .testimonial-card {
+        border-radius: 20px;
+        padding: 28px 24px;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .testimonial-card::before {
+        font-size: 4rem;
+        top: 10px;
+        left: 20px;
+    }
+
+    .testimonial-text {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .testimonial-stars {
+        font-size: 0.8rem;
+    }
+
+    /* Form Mobile - Modern styling */
+    .prenota {
+        padding: 60px 0;
+    }
+
+    .booking-form {
+        padding: 32px 24px;
+        border-radius: 24px;
+        border: none;
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .booking-form::before {
+        border-radius: 24px 24px 0 0;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+        color: var(--text-light);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        border-radius: 14px;
+        padding: 14px 16px;
+        border: 1.5px solid var(--border-color);
+        background: var(--text-white);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(155, 77, 150, 0.1);
+    }
+
+    .checkbox-group {
+        padding: 12px 0;
+    }
+
+    .checkbox-group label {
+        font-size: 0.85rem;
+    }
+
+    .booking-form .btn {
+        border-radius: 16px;
+        padding: 16px 24px;
+        font-size: 0.95rem;
+    }
+
+    /* Contatti Mobile */
+    .contatti {
+        padding: 60px 0;
+    }
+
+    .contatti-info h2 {
+        text-align: center;
+        font-size: 1.6rem;
+    }
+
+    .contatti-info > p {
+        text-align: center;
+    }
+
+    .contatto-item {
+        background: var(--text-white);
+        padding: 16px;
+        border-radius: 16px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+        margin-bottom: 12px;
+    }
+
+    .contatto-item i {
+        width: 44px;
+        height: 44px;
+        font-size: 1rem;
+    }
+
+    .contatto-item h4 {
+        font-size: 0.9rem;
+    }
+
+    .contatto-item p {
+        font-size: 0.85rem;
+    }
+
+    .social-links {
+        justify-content: center;
+        margin-top: 24px;
+    }
+
+    .map-placeholder {
+        border-radius: 20px;
+        min-height: 250px;
+    }
+
+    /* Footer Mobile */
+    .footer {
+        padding: 50px 0 120px;
+    }
+
+    .footer-logo {
+        justify-content: center;
+    }
+
+    .footer-col h4 {
+        font-size: 1rem;
+        margin-bottom: 16px;
+    }
+
+    .footer-col h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-col ul li {
+        margin-bottom: 10px;
+    }
+
+    .footer-col ul a {
+        font-size: 0.9rem;
+    }
+
+    .footer-bottom {
+        padding-top: 24px;
+    }
+
+    .footer-bottom p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-title span {
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .about-stats {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .stat {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        padding: 16px 20px;
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+    }
+
+    .stat-label {
+        text-align: left;
+    }
+}
+
+/* Modern Mobile CTA Bar */
+@media (max-width: 768px) {
+    .mobile-cta-bar {
+        padding: 10px 16px;
+        padding-bottom: calc(10px + env(safe-area-inset-bottom));
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+        box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .mobile-cta-btn {
+        border-radius: 14px;
+        padding: 10px 8px;
+        gap: 3px;
+    }
+
+    .mobile-cta-btn i {
+        font-size: 1.2rem;
+    }
+
+    .mobile-cta-btn span {
+        font-size: 0.65rem;
+        letter-spacing: 0.3px;
+    }
+
+    .mobile-cta-btn.call {
+        background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    }
+
+    .mobile-cta-btn.book {
+        background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
+    }
+
+    .mobile-cta-btn.whatsapp {
+        background: linear-gradient(135deg, #25D366, #128C7E);
     }
 }

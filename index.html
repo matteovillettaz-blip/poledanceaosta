@@ -3,23 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pole Dance Aosta - Corsi di pole dance, aerial hoop e discipline aeree ad Aosta. Lezione di prova gratuita.">
     <title>Pole Dance Aosta - Pole Dance & Aerial Arts</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Salta al contenuto principale</a>
+
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Menu principale">
         <div class="nav-container">
             <a href="#" class="logo">
                 <span class="logo-icon"><i class="fas fa-spa"></i></span>
                 <span class="logo-text">Pole Dance Aosta</span>
             </a>
-            <button class="nav-toggle" aria-label="Toggle menu">
+            <button class="nav-toggle" aria-label="Apri menu" aria-expanded="false" aria-controls="nav-menu">
                 <span class="hamburger"></span>
             </button>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="nav-menu" role="menubar">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#corsi" class="nav-link">Corsi</a></li>
                 <li><a href="#istruttori" class="nav-link">Istruttori</a></li>
@@ -32,6 +36,7 @@
     </nav>
 
     <!-- Hero Section -->
+    <main id="main-content">
     <section id="home" class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -92,28 +97,28 @@
                         <i class="fas fa-seedling"></i>
                     </div>
                     <h3>Pole Dance Principianti</h3>
-                    <p>Il corso perfetto per chi inizia. Imparerai le basi, le prime figure e svilupperai forza e flessibilita.</p>
+                    <p>Il corso perfetto per chi inizia. Imparerai le basi, le prime figure e svilupperai forza e flessibilità.</p>
                     <ul class="corso-features">
                         <li><i class="fas fa-check"></i> Nessuna esperienza richiesta</li>
                         <li><i class="fas fa-check"></i> Gruppi ridotti (max 8)</li>
                         <li><i class="fas fa-check"></i> 60 minuti a lezione</li>
                     </ul>
-                    <a href="#prenota" class="btn btn-outline">Scopri di piu</a>
+                    <a href="#prenota" class="btn btn-outline">Scopri di più</a>
                 </div>
 
                 <div class="corso-card featured">
-                    <div class="corso-badge">Piu Popolare</div>
+                    <div class="corso-badge">Più Popolare</div>
                     <div class="corso-icon">
                         <i class="fas fa-fire"></i>
                     </div>
                     <h3>Pole Dance Intermedio</h3>
-                    <p>Perfeziona la tecnica e impara figure aeree piu complesse. Per chi ha gia le basi.</p>
+                    <p>Perfeziona la tecnica e impara figure aeree più complesse. Per chi ha già le basi.</p>
                     <ul class="corso-features">
                         <li><i class="fas fa-check"></i> Inversioni e spin avanzati</li>
                         <li><i class="fas fa-check"></i> Combinazioni coreografiche</li>
                         <li><i class="fas fa-check"></i> 75 minuti a lezione</li>
                     </ul>
-                    <a href="#prenota" class="btn btn-primary">Scopri di piu</a>
+                    <a href="#prenota" class="btn btn-primary">Scopri di più</a>
                 </div>
 
                 <div class="corso-card">
@@ -121,13 +126,13 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <h3>Pole Dance Avanzato</h3>
-                    <p>Figure aeree complesse, transizioni fluide e performance. Per le piu esperte.</p>
+                    <p>Figure aeree complesse, transizioni fluide e performance. Per le più esperte.</p>
                     <ul class="corso-features">
                         <li><i class="fas fa-check"></i> Figure acrobatiche</li>
                         <li><i class="fas fa-check"></i> Preparazione competizioni</li>
                         <li><i class="fas fa-check"></i> 90 minuti a lezione</li>
                     </ul>
-                    <a href="#prenota" class="btn btn-outline">Scopri di piu</a>
+                    <a href="#prenota" class="btn btn-outline">Scopri di più</a>
                 </div>
 
                 <div class="corso-card">
@@ -135,13 +140,13 @@
                         <i class="fas fa-heart"></i>
                     </div>
                     <h3>Exotic Pole</h3>
-                    <p>Sensualita e floorwork. Esplora il lato piu espressivo del pole dance con tacchi e coreografie.</p>
+                    <p>Sensualità e floorwork. Esplora il lato più espressivo del pole dance con tacchi e coreografie.</p>
                     <ul class="corso-features">
                         <li><i class="fas fa-check"></i> Floorwork e transizioni</li>
                         <li><i class="fas fa-check"></i> Heels opzionali</li>
                         <li><i class="fas fa-check"></i> 60 minuti a lezione</li>
                     </ul>
-                    <a href="#prenota" class="btn btn-outline">Scopri di piu</a>
+                    <a href="#prenota" class="btn btn-outline">Scopri di più</a>
                 </div>
 
                 <div class="corso-card">
@@ -155,7 +160,7 @@
                         <li><i class="fas fa-check"></i> Core strength</li>
                         <li><i class="fas fa-check"></i> 60 minuti a lezione</li>
                     </ul>
-                    <a href="#prenota" class="btn btn-outline">Scopri di piu</a>
+                    <a href="#prenota" class="btn btn-outline">Scopri di più</a>
                 </div>
 
                 <div class="corso-card">
@@ -163,13 +168,13 @@
                         <i class="fas fa-wind"></i>
                     </div>
                     <h3>Stretching & Flexibility</h3>
-                    <p>Migliora la tua flessibilita con esercizi mirati. Complemento perfetto per ogni disciplina.</p>
+                    <p>Migliora la tua flessibilità con esercizi mirati. Complemento perfetto per ogni disciplina.</p>
                     <ul class="corso-features">
                         <li><i class="fas fa-check"></i> Spaccate e backbend</li>
                         <li><i class="fas fa-check"></i> Adatto a tutti</li>
                         <li><i class="fas fa-check"></i> 45 minuti a lezione</li>
                     </ul>
-                    <a href="#prenota" class="btn btn-outline">Scopri di piu</a>
+                    <a href="#prenota" class="btn btn-outline">Scopri di più</a>
                 </div>
             </div>
         </div>
@@ -374,7 +379,7 @@
     <section id="prezzi" class="prezzi">
         <div class="container">
             <h2 class="section-title">Abbonamenti</h2>
-            <p class="section-subtitle">Scegli la formula piu adatta a te</p>
+            <p class="section-subtitle">Scegli la formula più adatta a te</p>
 
             <div class="prezzi-grid">
                 <div class="prezzo-card">
@@ -400,7 +405,7 @@
                     <p class="prezzo-savings">Risparmi 50€</p>
                     <ul class="prezzo-features">
                         <li><i class="fas fa-check"></i> 10 lezioni</li>
-                        <li><i class="fas fa-check"></i> Validita 3 mesi</li>
+                        <li><i class="fas fa-check"></i> Validità 3 mesi</li>
                         <li><i class="fas fa-check"></i> Tutti i corsi</li>
                     </ul>
                     <a href="#prenota" class="btn btn-outline">Acquista</a>
@@ -457,7 +462,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p class="testimonial-text">"Ho iniziato senza sapere nulla e dopo 6 mesi riesco a fare figure che mai avrei immaginato. Le istruttori sono fantastiche!"</p>
+                    <p class="testimonial-text">"Ho iniziato senza sapere nulla e dopo 6 mesi riesco a fare figure che mai avrei immaginato. Le istruttrici sono fantastiche!"</p>
                     <div class="testimonial-author">
                         <span class="author-name">Alessandra M.</span>
                         <span class="author-info">Studentessa da 8 mesi</span>
@@ -487,7 +492,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p class="testimonial-text">"Il pole dance ha cambiato il mio rapporto con il mio corpo. Piu forte, piu sicura. Grazie Pole Dance Aosta!"</p>
+                    <p class="testimonial-text">"Il pole dance ha cambiato il mio rapporto con il mio corpo. Più forte, più sicura. Grazie Pole Dance Aosta!"</p>
                     <div class="testimonial-author">
                         <span class="author-name">Chiara B.</span>
                         <span class="author-info">Studentessa da 1 anno</span>
@@ -501,27 +506,27 @@
     <section id="prenota" class="prenota">
         <div class="container">
             <h2 class="section-title">Prenota la Tua Lezione di Prova</h2>
-            <p class="section-subtitle">La prima lezione e gratuita e senza impegno</p>
+            <p class="section-subtitle">La prima lezione è gratuita e senza impegno</p>
 
             <form class="booking-form" id="bookingForm">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="nome">Nome *</label>
-                        <input type="text" id="nome" name="nome" required>
+                        <input type="text" id="nome" name="nome" required autocomplete="given-name" placeholder="Il tuo nome">
                     </div>
                     <div class="form-group">
                         <label for="cognome">Cognome *</label>
-                        <input type="text" id="cognome" name="cognome" required>
+                        <input type="text" id="cognome" name="cognome" required autocomplete="family-name" placeholder="Il tuo cognome">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
                         <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" required autocomplete="email" placeholder="email@esempio.it">
                     </div>
                     <div class="form-group">
                         <label for="telefono">Telefono *</label>
-                        <input type="tel" id="telefono" name="telefono" required>
+                        <input type="tel" id="telefono" name="telefono" required autocomplete="tel" placeholder="333 123 4567">
                     </div>
                 </div>
                 <div class="form-row">
@@ -543,7 +548,7 @@
                             <option value="nessuna">Nessuna esperienza</option>
                             <option value="poca">Qualche lezione</option>
                             <option value="media">1-2 anni</option>
-                            <option value="avanzata">Piu di 2 anni</option>
+                            <option value="avanzata">Più di 2 anni</option>
                         </select>
                     </div>
                 </div>
@@ -580,7 +585,7 @@
                             <i class="fas fa-phone"></i>
                             <div>
                                 <h4>Telefono</h4>
-                                <p><a href="tel:+390212345678">02 1234 5678</a></p>
+                                <p><a href="tel:+390165123456">0165 123 456</a></p>
                             </div>
                         </div>
                         <div class="contatto-item">
@@ -616,6 +621,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -663,7 +669,7 @@
 
     <!-- Mobile Fixed CTA Bar -->
     <div class="mobile-cta-bar">
-        <a href="tel:+390212345678" class="mobile-cta-btn call">
+        <a href="tel:+390165123456" class="mobile-cta-btn call">
             <i class="fas fa-phone"></i>
             <span>Chiama</span>
         </a>
@@ -671,7 +677,7 @@
             <i class="fas fa-calendar-check"></i>
             <span>Prenota</span>
         </a>
-        <a href="https://wa.me/390212345678" class="mobile-cta-btn whatsapp">
+        <a href="https://wa.me/390165123456" class="mobile-cta-btn whatsapp">
             <i class="fab fa-whatsapp"></i>
             <span>WhatsApp</span>
         </a>
