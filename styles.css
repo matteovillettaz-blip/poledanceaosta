@@ -1263,7 +1263,7 @@ h2 span, h1 em {
     animation: fadeInUp 0.6s ease forwards;
 }
 
-/* ===== Desktop Enhancements (min-width: 768px) ===== */
+/* ===== Tablet Styles (min-width: 768px) ===== */
 @media (min-width: 768px) {
     body {
         padding-bottom: 0;
@@ -1283,17 +1283,25 @@ h2 span, h1 em {
     }
 
     .fullscreen-menu {
-        position: static;
+        position: fixed;
+        inset: auto;
+        top: 0;
+        right: var(--space-2xl);
+        left: auto;
+        height: 80px;
         opacity: 1;
         visibility: visible;
         background: none;
         flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
         padding: 0;
+        z-index: 100;
     }
 
     .fullscreen-menu ul {
         display: flex;
-        gap: var(--space-lg);
+        gap: var(--space-md);
         margin: 0;
     }
 
@@ -1303,26 +1311,386 @@ h2 span, h1 em {
     }
 
     .fullscreen-menu a {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         font-family: var(--font-body);
         color: var(--gray-800);
-        padding: var(--space-sm) 0;
+        padding: var(--space-sm) var(--space-md);
+        border-radius: var(--radius-sm);
+        transition: all 0.2s ease;
+    }
+
+    .fullscreen-menu a:hover {
+        color: var(--primary);
+        background: rgba(155, 77, 150, 0.08);
     }
 
     .fullscreen-menu a::before {
         display: none;
     }
 
+    /* Navigation links on dark top-bar (over hero) */
+    .top-bar.dark + .fullscreen-menu a {
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .top-bar.dark + .fullscreen-menu a:hover {
+        color: var(--primary-light);
+        background: rgba(255, 255, 255, 0.1);
+    }
+
     .menu-footer {
         display: none;
     }
 
+    /* Hero Desktop */
     .hero {
         min-height: 100vh;
     }
 
     .hero-content {
         max-width: 600px;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.15rem;
+    }
+
+    .btn-main {
+        padding: var(--space-md) var(--space-xl);
+    }
+
+    .btn-main:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 30px rgba(155, 77, 150, 0.5);
+    }
+
+    /* Stats */
+    .stats-strip {
+        padding: var(--space-xl) var(--space-2xl);
+    }
+
+    .stat-num {
+        font-size: 2rem;
+    }
+
+    /* About */
+    .about-quick {
+        padding: var(--space-3xl) var(--space-2xl);
+    }
+
+    .about-quick > p {
+        max-width: 500px;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .feature {
+        padding: var(--space-xl);
+    }
+
+    .feature:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-md);
+    }
+
+    /* Section Headers */
+    .section-header {
+        padding: var(--space-3xl) var(--space-2xl) var(--space-xl);
+    }
+
+    .section-header h2 {
+        font-size: 2.25rem;
+    }
+
+    /* Corsi Grid */
+    .corsi-scroll {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-xl);
+        padding: 0 var(--space-2xl);
+        overflow: visible;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .team-scroll {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-xl);
+        padding: 0 var(--space-2xl);
+        overflow: visible;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .testimonial-scroll {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-xl);
+        padding: 0 var(--space-2xl);
+        overflow: visible;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .corso-card,
+    .team-card,
+    .testimonial {
+        flex: none;
+        min-height: auto;
+    }
+
+    .corso-card {
+        padding: var(--space-xl) var(--space-lg);
+    }
+
+    .team-card {
+        padding: var(--space-xl);
+    }
+
+    .testimonial {
+        padding: var(--space-xl);
+    }
+
+    .corso-card {
+        transition: all 0.3s ease;
+    }
+
+    .corso-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .corso-card.featured:hover {
+        transform: translateY(-8px) scale(1.02);
+    }
+
+    .link-more {
+        padding: var(--space-xl);
+    }
+
+    .link-more:hover {
+        color: var(--primary-dark);
+    }
+
+    /* Team */
+    .team {
+        padding-bottom: var(--space-3xl);
+    }
+
+    .team-card {
+        transition: all 0.3s ease;
+    }
+
+    .team-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    /* Schedule */
+    .schedule {
+        padding: 0 var(--space-2xl) var(--space-3xl);
+    }
+
+    .schedule-tabs {
+        justify-content: center;
+        max-width: 600px;
+        margin: 0 auto var(--space-xl);
+    }
+
+    .tab {
+        min-width: 80px;
+        transition: all 0.2s ease;
+    }
+
+    .tab:hover:not(.active) {
+        background: var(--gray-200);
+    }
+
+    .schedule-content {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .lesson {
+        transition: all 0.2s ease;
+    }
+
+    .lesson:hover {
+        background: var(--gray-100);
+    }
+
+    /* Pricing */
+    .pricing {
+        padding-bottom: var(--space-3xl);
+    }
+
+    .pricing-cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-lg);
+        padding: 0 var(--space-2xl);
+        align-items: stretch;
+    }
+
+    .price-card {
+        flex: none;
+        transition: all 0.3s ease;
+    }
+
+    .price-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .price-card.featured {
+        transform: scale(1.05);
+    }
+
+    .price-card.featured:hover {
+        transform: scale(1.08) translateY(-8px);
+    }
+
+    /* Testimonials */
+    .testimonials {
+        padding-bottom: var(--space-3xl);
+    }
+
+    .testimonial {
+        transition: all 0.3s ease;
+    }
+
+    .testimonial:hover {
+        transform: translateY(-4px);
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    /* Booking */
+    .booking {
+        padding: 0 var(--space-2xl) var(--space-3xl);
+    }
+
+    .booking-form {
+        max-width: 600px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-md);
+    }
+
+    .booking-form .form-group:nth-child(5),
+    .booking-form .form-checkbox,
+    .booking-form .btn-submit {
+        grid-column: 1 / -1;
+    }
+
+    .btn-submit {
+        max-width: 300px;
+        margin: var(--space-md) auto 0;
+    }
+
+    .btn-submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 30px rgba(155, 77, 150, 0.4);
+    }
+
+    /* Contact */
+    .contact {
+        padding-bottom: var(--space-3xl);
+    }
+
+    .contact-cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-md);
+        padding: 0 var(--space-2xl);
+    }
+
+    .contact-card {
+        flex: none;
+        transition: all 0.2s ease;
+    }
+
+    .contact-card:hover {
+        transform: translateY(-4px);
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .map-container {
+        padding: var(--space-xl) var(--space-2xl);
+    }
+
+    .map-placeholder {
+        height: 300px;
+    }
+
+    .social-links a:hover {
+        background: var(--primary);
+        transform: translateY(-2px);
+    }
+
+    /* Footer */
+    .footer {
+        padding: var(--space-2xl) var(--space-2xl);
+    }
+
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-brand {
+        margin-bottom: 0;
+    }
+
+    .footer p {
+        margin-bottom: 0;
+    }
+}
+
+/* ===== Large Desktop (min-width: 1024px) ===== */
+@media (min-width: 1024px) {
+    .top-bar {
+        padding: 0 var(--space-3xl);
+    }
+
+    .fullscreen-menu {
+        right: var(--space-3xl);
+    }
+
+    .fullscreen-menu ul {
+        gap: var(--space-lg);
+    }
+
+    .fullscreen-menu a {
+        font-size: 0.95rem;
+        padding: var(--space-sm) var(--space-lg);
+    }
+
+    /* Add CTA button to nav */
+    .fullscreen-menu li:last-child a {
+        background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        color: var(--white) !important;
+        padding: var(--space-sm) var(--space-lg);
+        border-radius: var(--radius-full);
+        box-shadow: 0 4px 16px rgba(155, 77, 150, 0.3);
+    }
+
+    .fullscreen-menu li:last-child a:hover {
+        background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(155, 77, 150, 0.4);
     }
 
     .hero h1 {
@@ -1333,50 +1701,252 @@ h2 span, h1 em {
         font-size: 1.25rem;
     }
 
-    .features-grid {
-        grid-template-columns: repeat(4, 1fr);
+    .hero-content {
+        max-width: 700px;
     }
 
-    .corsi-scroll,
-    .team-scroll,
+    .section-header h2 {
+        font-size: 2.5rem;
+    }
+
+    .corsi-scroll {
+        padding: 0 var(--space-3xl);
+        max-width: 1400px;
+        gap: var(--space-2xl);
+    }
+
+    .team-scroll {
+        padding: 0 var(--space-3xl);
+        max-width: 1100px;
+        gap: var(--space-2xl);
+    }
+
     .testimonial-scroll {
-        justify-content: center;
-        flex-wrap: wrap;
-        overflow: visible;
+        padding: 0 var(--space-3xl);
+        max-width: 1400px;
+        gap: var(--space-2xl);
     }
 
-    .corso-card,
-    .team-card,
+    .corso-card {
+        padding: var(--space-2xl);
+    }
+
+    .corso-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .corso-card p {
+        font-size: 1rem;
+    }
+
+    .team-card {
+        padding: var(--space-2xl);
+    }
+
+    .team-card h3 {
+        font-size: 1.3rem;
+    }
+
     .testimonial {
-        flex: 0 0 300px;
+        padding: var(--space-2xl);
+    }
+
+    .testimonial p {
+        font-size: 1.1rem;
     }
 
     .pricing-cards {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .price-card {
-        flex: 0 0 280px;
-    }
-
-    .contact-cards {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .contact-card {
-        flex: 0 0 calc(50% - var(--space-sm));
-    }
-
-    .booking-form {
-        max-width: 500px;
+        padding: 0 var(--space-3xl);
+        max-width: 1200px;
         margin: 0 auto;
     }
 
-    .footer {
-        padding-bottom: var(--space-xl);
+    .contact-cards {
+        padding: 0 var(--space-3xl);
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .booking {
+        padding: 0 var(--space-3xl) var(--space-3xl);
+    }
+
+    .booking-form {
+        max-width: 700px;
+    }
+
+    .map-container {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+}
+
+/* ===== Extra Large Desktop (min-width: 1280px) ===== */
+@media (min-width: 1280px) {
+    :root {
+        --space-3xl: 80px;
+    }
+
+    .top-bar {
+        padding: 0 60px;
+    }
+
+    .fullscreen-menu {
+        right: 60px;
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+    }
+
+    .hero-content {
+        max-width: 800px;
+    }
+
+    .about-quick {
+        padding: var(--space-3xl) 60px;
+    }
+
+    .features-grid {
+        max-width: 1000px;
+        gap: var(--space-xl);
+    }
+
+    .feature {
+        padding: var(--space-xl) var(--space-lg);
+    }
+
+    .corsi-scroll {
+        padding: 0 60px;
+        max-width: 1600px;
+    }
+
+    .team-scroll {
+        padding: 0 60px;
+        max-width: 1200px;
+    }
+
+    .testimonial-scroll {
+        padding: 0 60px;
+        max-width: 1600px;
+    }
+
+    .corso-card {
+        padding: var(--space-2xl) var(--space-xl);
+    }
+
+    .corso-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .corso-icon i {
+        font-size: 1.8rem;
+    }
+
+    .team-avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .team-avatar i {
+        font-size: 2.5rem;
+    }
+
+    .pricing-cards {
+        padding: 0 60px;
+        max-width: 1400px;
+        gap: var(--space-xl);
+    }
+
+    .contact-cards {
+        padding: 0 60px;
+        max-width: 1200px;
+    }
+}
+
+/* ===== Additional Desktop Polish ===== */
+@media (min-width: 768px) {
+    /* Smooth cursor change on interactive elements */
+    .corso-card,
+    .team-card,
+    .price-card,
+    .testimonial,
+    .feature,
+    .contact-card {
+        cursor: default;
+    }
+
+    /* Better hero background for desktop */
+    .hero-bg {
+        background-size: cover, 300px;
+    }
+
+    /* Decorative elements */
+    .about-quick::before {
+        content: '';
+        position: absolute;
+        top: -50px;
+        right: 10%;
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(circle, rgba(155, 77, 150, 0.1) 0%, transparent 70%);
+        border-radius: 50%;
+        pointer-events: none;
+    }
+
+    .about-quick {
+        position: relative;
+    }
+
+    /* Stats enhanced */
+    .stats-strip {
+        gap: var(--space-3xl);
+    }
+
+    .stat-item {
+        position: relative;
+    }
+
+    .stat-item:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        right: calc(-1 * var(--space-xl));
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Price card featured glow */
+    .price-card.featured {
+        box-shadow: 0 20px 60px rgba(155, 77, 150, 0.3);
+    }
+
+    /* Navbar scroll shadow enhancement */
+    .top-bar.scrolled {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Better link underline animation */
+    .fullscreen-menu a:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background: var(--primary);
+        transition: width 0.3s ease;
+    }
+
+    .fullscreen-menu li {
+        position: relative;
+    }
+
+    .fullscreen-menu li:not(:last-child) a:hover::after {
+        width: 100%;
     }
 }
