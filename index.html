@@ -2,686 +2,627 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="Pole Dance Aosta - Corsi di pole dance, aerial hoop e discipline aeree ad Aosta. Lezione di prova gratuita.">
-    <title>Pole Dance Aosta - Pole Dance & Aerial Arts</title>
+    <meta name="theme-color" content="#9b4d96">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Pole Dance Aosta</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <!-- Skip to content link for accessibility -->
-    <a href="#main-content" class="skip-link">Salta al contenuto principale</a>
+    <!-- Top Bar -->
+    <header class="top-bar">
+        <a href="#" class="logo">
+            <i class="fas fa-spa"></i>
+            <span>Pole Dance Aosta</span>
+        </a>
+        <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
 
-    <!-- Navigation -->
-    <nav class="navbar" role="navigation" aria-label="Menu principale">
-        <div class="nav-container">
-            <a href="#" class="logo">
-                <span class="logo-icon"><i class="fas fa-spa"></i></span>
-                <span class="logo-text">Pole Dance Aosta</span>
-            </a>
-            <button class="nav-toggle" aria-label="Apri menu" aria-expanded="false" aria-controls="nav-menu">
-                <span class="hamburger"></span>
-            </button>
-            <ul class="nav-menu" id="nav-menu" role="menubar">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#corsi" class="nav-link">Corsi</a></li>
-                <li><a href="#istruttori" class="nav-link">Istruttori</a></li>
-                <li><a href="#orari" class="nav-link">Orari</a></li>
-                <li><a href="#prezzi" class="nav-link">Prezzi</a></li>
-                <li><a href="#contatti" class="nav-link">Contatti</a></li>
-                <li><a href="#prenota" class="nav-link cta-button">Prenota Ora</a></li>
-            </ul>
+    <!-- Full Screen Menu -->
+    <nav class="fullscreen-menu">
+        <ul>
+            <li><a href="#home" data-number="01">Home</a></li>
+            <li><a href="#corsi" data-number="02">Corsi</a></li>
+            <li><a href="#team" data-number="03">Team</a></li>
+            <li><a href="#orari" data-number="04">Orari</a></li>
+            <li><a href="#prezzi" data-number="05">Prezzi</a></li>
+            <li><a href="#contatti" data-number="06">Contatti</a></li>
+        </ul>
+        <div class="menu-footer">
+            <a href="tel:+390165123456"><i class="fas fa-phone"></i> 0165 123 456</a>
+            <div class="menu-social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <main id="main-content">
-    <section id="home" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-title">Scopri la Bellezza del <span>Pole Dance</span></h1>
-            <p class="hero-subtitle">Forza, grazia e fiducia in te stessa. Inizia il tuo viaggio con noi.</p>
-            <div class="hero-buttons">
-                <a href="#corsi" class="btn btn-primary">Scopri i Corsi</a>
-                <a href="#prenota" class="btn btn-secondary">Lezione di Prova Gratuita</a>
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-content">
+                <span class="hero-label">Pole Dance & Aerial Arts</span>
+                <h1>Scopri la tua <em>forza</em> interiore</h1>
+                <p>Eleganza, potenza e fiducia in te stessa</p>
+                <a href="#prenota" class="btn-main">
+                    Prova Gratuita
+                    <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
-        </div>
-        <div class="scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
-        </div>
-    </section>
+            <div class="hero-scroll">
+                <span>Scorri</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2 class="section-title">Il Nostro Studio</h2>
-                    <p>Benvenuta a <strong>Pole Dance Aosta</strong>, il luogo dove la forza incontra l'eleganza. Dal 2015 aiutiamo donne (e uomini!) a scoprire il proprio potenziale attraverso l'arte del pole dance e delle discipline aeree.</p>
-                    <p>Il nostro studio offre un ambiente accogliente, inclusivo e professionale, dove ogni persona può sentirsi a proprio agio indipendentemente dal livello di partenza.</p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <span class="stat-number">500+</span>
-                            <span class="stat-label">Studenti Soddisfatti</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">8</span>
-                            <span class="stat-label">Anni di Esperienza</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">15</span>
-                            <span class="stat-label">Pali Professionali</span>
-                        </div>
-                    </div>
+        <!-- Stats Strip -->
+        <section class="stats-strip">
+            <div class="stat-item">
+                <span class="stat-num">500+</span>
+                <span class="stat-label">Allieve</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">8</span>
+                <span class="stat-label">Anni</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">6</span>
+                <span class="stat-label">Corsi</span>
+            </div>
+        </section>
+
+        <!-- About Quick -->
+        <section class="about-quick">
+            <h2>Il tuo nuovo <span>studio</span></h2>
+            <p>Un ambiente accogliente dove ogni donna può scoprire il proprio potenziale attraverso la pole dance e le discipline aeree.</p>
+            <div class="features-grid">
+                <div class="feature">
+                    <i class="fas fa-users"></i>
+                    <span>Gruppi piccoli</span>
                 </div>
-                <div class="about-image">
-                    <div class="image-placeholder">
-                        <i class="fas fa-image"></i>
-                        <span>Foto Studio</span>
-                    </div>
+                <div class="feature">
+                    <i class="fas fa-heart"></i>
+                    <span>Tutti i livelli</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-star"></i>
+                    <span>Istruttori certificati</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-spa"></i>
+                    <span>Ambiente sicuro</span>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Corsi Section -->
-    <section id="corsi" class="corsi">
-        <div class="container">
-            <h2 class="section-title">I Nostri Corsi</h2>
-            <p class="section-subtitle">Trova il percorso perfetto per te</p>
+        <!-- Corsi Section -->
+        <section id="corsi" class="corsi">
+            <div class="section-header">
+                <span class="section-label">I nostri corsi</span>
+                <h2>Trova il tuo <span>percorso</span></h2>
+            </div>
 
-            <div class="corsi-grid">
-                <div class="corso-card">
-                    <div class="corso-icon">
-                        <i class="fas fa-seedling"></i>
-                    </div>
-                    <h3>Pole Dance Principianti</h3>
-                    <p>Il corso perfetto per chi inizia. Imparerai le basi, le prime figure e svilupperai forza e flessibilità.</p>
-                    <ul class="corso-features">
-                        <li><i class="fas fa-check"></i> Nessuna esperienza richiesta</li>
-                        <li><i class="fas fa-check"></i> Gruppi ridotti (max 8)</li>
-                        <li><i class="fas fa-check"></i> 60 minuti a lezione</li>
+            <!-- Horizontal Scroll Cards -->
+            <div class="corsi-scroll">
+                <article class="corso-card">
+                    <div class="corso-icon"><i class="fas fa-seedling"></i></div>
+                    <h3>Principianti</h3>
+                    <p>Le basi della pole dance per chi inizia da zero</p>
+                    <ul>
+                        <li>60 min</li>
+                        <li>Max 8 persone</li>
                     </ul>
-                    <a href="#prenota" class="btn btn-outline">Scopri di più</a>
-                </div>
+                </article>
 
-                <div class="corso-card featured">
-                    <div class="corso-badge">Più Popolare</div>
-                    <div class="corso-icon">
-                        <i class="fas fa-fire"></i>
-                    </div>
-                    <h3>Pole Dance Intermedio</h3>
-                    <p>Perfeziona la tecnica e impara figure aeree più complesse. Per chi ha già le basi.</p>
-                    <ul class="corso-features">
-                        <li><i class="fas fa-check"></i> Inversioni e spin avanzati</li>
-                        <li><i class="fas fa-check"></i> Combinazioni coreografiche</li>
-                        <li><i class="fas fa-check"></i> 75 minuti a lezione</li>
+                <article class="corso-card featured">
+                    <span class="badge">Popolare</span>
+                    <div class="corso-icon"><i class="fas fa-fire"></i></div>
+                    <h3>Intermedio</h3>
+                    <p>Figure aeree e spin avanzati</p>
+                    <ul>
+                        <li>75 min</li>
+                        <li>Coreografie</li>
                     </ul>
-                    <a href="#prenota" class="btn btn-primary">Scopri di più</a>
-                </div>
+                </article>
 
-                <div class="corso-card">
-                    <div class="corso-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h3>Pole Dance Avanzato</h3>
-                    <p>Figure aeree complesse, transizioni fluide e performance. Per le più esperte.</p>
-                    <ul class="corso-features">
-                        <li><i class="fas fa-check"></i> Figure acrobatiche</li>
-                        <li><i class="fas fa-check"></i> Preparazione competizioni</li>
-                        <li><i class="fas fa-check"></i> 90 minuti a lezione</li>
+                <article class="corso-card">
+                    <div class="corso-icon"><i class="fas fa-star"></i></div>
+                    <h3>Avanzato</h3>
+                    <p>Acrobazie e preparazione gare</p>
+                    <ul>
+                        <li>90 min</li>
+                        <li>Performance</li>
                     </ul>
-                    <a href="#prenota" class="btn btn-outline">Scopri di più</a>
-                </div>
+                </article>
 
-                <div class="corso-card">
-                    <div class="corso-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3>Exotic Pole</h3>
-                    <p>Sensualità e floorwork. Esplora il lato più espressivo del pole dance con tacchi e coreografie.</p>
-                    <ul class="corso-features">
-                        <li><i class="fas fa-check"></i> Floorwork e transizioni</li>
-                        <li><i class="fas fa-check"></i> Heels opzionali</li>
-                        <li><i class="fas fa-check"></i> 60 minuti a lezione</li>
+                <article class="corso-card">
+                    <div class="corso-icon"><i class="fas fa-heart"></i></div>
+                    <h3>Exotic</h3>
+                    <p>Floorwork e sensualit&agrave;</p>
+                    <ul>
+                        <li>60 min</li>
+                        <li>Heels optional</li>
                     </ul>
-                    <a href="#prenota" class="btn btn-outline">Scopri di più</a>
-                </div>
+                </article>
 
-                <div class="corso-card">
-                    <div class="corso-icon">
-                        <i class="fas fa-circle-notch"></i>
-                    </div>
+                <article class="corso-card">
+                    <div class="corso-icon"><i class="fas fa-circle-notch"></i></div>
                     <h3>Aerial Hoop</h3>
-                    <p>Danza aerea su cerchio. Eleganza e forza in sospensione per chi cerca qualcosa di diverso.</p>
-                    <ul class="corso-features">
-                        <li><i class="fas fa-check"></i> Tutti i livelli</li>
-                        <li><i class="fas fa-check"></i> Core strength</li>
-                        <li><i class="fas fa-check"></i> 60 minuti a lezione</li>
+                    <p>Danza aerea su cerchio</p>
+                    <ul>
+                        <li>60 min</li>
+                        <li>Tutti i livelli</li>
                     </ul>
-                    <a href="#prenota" class="btn btn-outline">Scopri di più</a>
+                </article>
+
+                <article class="corso-card">
+                    <div class="corso-icon"><i class="fas fa-wind"></i></div>
+                    <h3>Flexibility</h3>
+                    <p>Stretching e mobilit&agrave;</p>
+                    <ul>
+                        <li>45 min</li>
+                        <li>Spaccate</li>
+                    </ul>
+                </article>
+            </div>
+
+            <a href="#prenota" class="link-more">
+                Scopri tutti i dettagli <i class="fas fa-arrow-right"></i>
+            </a>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="team">
+            <div class="section-header">
+                <span class="section-label">Il team</span>
+                <h2>Le tue <span>istruttrici</span></h2>
+            </div>
+
+            <div class="team-scroll">
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Elena R.</h3>
+                    <span class="team-role">Fondatrice & Head Coach</span>
+                    <p>15 anni di esperienza, campionessa italiana 2019</p>
                 </div>
 
-                <div class="corso-card">
-                    <div class="corso-icon">
-                        <i class="fas fa-wind"></i>
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <i class="fas fa-user"></i>
                     </div>
-                    <h3>Stretching & Flexibility</h3>
-                    <p>Migliora la tua flessibilità con esercizi mirati. Complemento perfetto per ogni disciplina.</p>
-                    <ul class="corso-features">
-                        <li><i class="fas fa-check"></i> Spaccate e backbend</li>
-                        <li><i class="fas fa-check"></i> Adatto a tutti</li>
-                        <li><i class="fas fa-check"></i> 45 minuti a lezione</li>
-                    </ul>
-                    <a href="#prenota" class="btn btn-outline">Scopri di più</a>
+                    <h3>Martina L.</h3>
+                    <span class="team-role">Istruttrice Exotic</span>
+                    <p>Specializzata in floorwork e coreografie sensuali</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Sara B.</h3>
+                    <span class="team-role">Istruttrice Aerial</span>
+                    <p>Esperta di aerial hoop e discipline aeree</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Istruttori Section -->
-    <section id="istruttori" class="istruttori">
-        <div class="container">
-            <h2 class="section-title">Il Nostro Team</h2>
-            <p class="section-subtitle">Istruttori certificati e appassionati</p>
-
-            <div class="istruttori-grid">
-                <div class="istruttore-card">
-                    <div class="istruttore-image">
-                        <div class="image-placeholder">
-                            <i class="fas fa-user"></i>
-                        </div>
-                    </div>
-                    <div class="istruttore-info">
-                        <h3>Giulia Rossi</h3>
-                        <span class="istruttore-role">Fondatrice & Head Instructor</span>
-                        <p>Campionessa italiana 2019. 10 anni di esperienza nell'insegnamento del pole dance.</p>
-                        <div class="istruttore-social">
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-facebook"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="istruttore-card">
-                    <div class="istruttore-image">
-                        <div class="image-placeholder">
-                            <i class="fas fa-user"></i>
-                        </div>
-                    </div>
-                    <div class="istruttore-info">
-                        <h3>Marco Bianchi</h3>
-                        <span class="istruttore-role">Pole & Aerial Instructor</span>
-                        <p>Specializzato in pole sport e power moves. Certificato IPSF.</p>
-                        <div class="istruttore-social">
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-facebook"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="istruttore-card">
-                    <div class="istruttore-image">
-                        <div class="image-placeholder">
-                            <i class="fas fa-user"></i>
-                        </div>
-                    </div>
-                    <div class="istruttore-info">
-                        <h3>Sara Verdi</h3>
-                        <span class="istruttore-role">Exotic & Flexibility Instructor</span>
-                        <p>Ballerina professionista. Specializzata in exotic pole e stretching avanzato.</p>
-                        <div class="istruttore-social">
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-facebook"></i></a>
-                        </div>
-                    </div>
-                </div>
+        <!-- Schedule Section -->
+        <section id="orari" class="schedule">
+            <div class="section-header">
+                <span class="section-label">Orari</span>
+                <h2>Quando <span>allenarsi</span></h2>
             </div>
-        </div>
-    </section>
 
-    <!-- Orari Section -->
-    <section id="orari" class="orari">
-        <div class="container">
-            <h2 class="section-title">Orari delle Lezioni</h2>
-            <p class="section-subtitle">Scegli l'orario che fa per te</p>
+            <div class="schedule-tabs">
+                <button class="tab active" data-day="lun">Lun</button>
+                <button class="tab" data-day="mar">Mar</button>
+                <button class="tab" data-day="mer">Mer</button>
+                <button class="tab" data-day="gio">Gio</button>
+                <button class="tab" data-day="ven">Ven</button>
+                <button class="tab" data-day="sab">Sab</button>
+            </div>
 
-            <div class="schedule-container">
-                <div class="schedule-tabs">
-                    <button class="tab-btn active" data-day="lunedi">Lunedi</button>
-                    <button class="tab-btn" data-day="martedi">Martedi</button>
-                    <button class="tab-btn" data-day="mercoledi">Mercoledi</button>
-                    <button class="tab-btn" data-day="giovedi">Giovedi</button>
-                    <button class="tab-btn" data-day="venerdi">Venerdi</button>
-                    <button class="tab-btn" data-day="sabato">Sabato</button>
+            <div class="schedule-content">
+                <div class="schedule-day active" id="lun">
+                    <div class="lesson">
+                        <span class="time">10:00</span>
+                        <div class="lesson-info">
+                            <strong>Principianti</strong>
+                            <span>Elena</span>
+                        </div>
+                    </div>
+                    <div class="lesson">
+                        <span class="time">18:00</span>
+                        <div class="lesson-info">
+                            <strong>Intermedio</strong>
+                            <span>Elena</span>
+                        </div>
+                    </div>
+                    <div class="lesson">
+                        <span class="time">19:30</span>
+                        <div class="lesson-info">
+                            <strong>Avanzato</strong>
+                            <span>Elena</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="schedule-content">
-                    <div class="schedule-day active" id="lunedi">
-                        <div class="schedule-item">
-                            <span class="time">10:00 - 11:00</span>
-                            <span class="course">Stretching & Flexibility</span>
-                            <span class="instructor">Sara</span>
-                        </div>
-                        <div class="schedule-item">
-                            <span class="time">18:00 - 19:00</span>
-                            <span class="course">Pole Principianti</span>
-                            <span class="instructor">Giulia</span>
-                        </div>
-                        <div class="schedule-item">
-                            <span class="time">19:15 - 20:30</span>
-                            <span class="course">Pole Intermedio</span>
-                            <span class="instructor">Marco</span>
-                        </div>
-                        <div class="schedule-item">
-                            <span class="time">20:45 - 22:00</span>
-                            <span class="course">Exotic Pole</span>
-                            <span class="instructor">Sara</span>
+                <div class="schedule-day" id="mar">
+                    <div class="lesson">
+                        <span class="time">18:00</span>
+                        <div class="lesson-info">
+                            <strong>Exotic</strong>
+                            <span>Martina</span>
                         </div>
                     </div>
-
-                    <div class="schedule-day" id="martedi">
-                        <div class="schedule-item">
-                            <span class="time">12:00 - 13:00</span>
-                            <span class="course">Pole Principianti</span>
-                            <span class="instructor">Giulia</span>
-                        </div>
-                        <div class="schedule-item">
-                            <span class="time">18:00 - 19:00</span>
-                            <span class="course">Aerial Hoop</span>
-                            <span class="instructor">Marco</span>
-                        </div>
-                        <div class="schedule-item">
-                            <span class="time">19:15 - 20:45</span>
-                            <span class="course">Pole Avanzato</span>
-                            <span class="instructor">Giulia</span>
+                    <div class="lesson">
+                        <span class="time">19:30</span>
+                        <div class="lesson-info">
+                            <strong>Flexibility</strong>
+                            <span>Sara</span>
                         </div>
                     </div>
+                </div>
 
-                    <div class="schedule-day" id="mercoledi">
-                        <div class="schedule-item">
-                            <span class="time">10:00 - 11:00</span>
-                            <span class="course">Stretching & Flexibility</span>
-                            <span class="instructor">Sara</span>
-                        </div>
-                        <div class="schedule-item">
-                            <span class="time">18:00 - 19:00</span>
-                            <span class="course">Pole Principianti</span>
-                            <span class="instructor">Marco</span>
-                        </div>
-                        <div class="schedule-item">
-                            <span class="time">19:15 - 20:30</span>
-                            <span class="course">Pole Intermedio</span>
-                            <span class="instructor">Giulia</span>
+                <div class="schedule-day" id="mer">
+                    <div class="lesson">
+                        <span class="time">10:00</span>
+                        <div class="lesson-info">
+                            <strong>Aerial Hoop</strong>
+                            <span>Sara</span>
                         </div>
                     </div>
-
-                    <div class="schedule-day" id="giovedi">
-                        <div class="schedule-item">
-                            <span class="time">12:00 - 13:00</span>
-                            <span class="course">Pole Principianti</span>
-                            <span class="instructor">Giulia</span>
-                        </div>
-                        <div class="schedule-item">
-                            <span class="time">18:00 - 19:00</span>
-                            <span class="course">Exotic Pole</span>
-                            <span class="instructor">Sara</span>
-                        </div>
-                        <div class="schedule-item">
-                            <span class="time">19:15 - 20:45</span>
-                            <span class="course">Pole Avanzato</span>
-                            <span class="instructor">Marco</span>
+                    <div class="lesson">
+                        <span class="time">18:00</span>
+                        <div class="lesson-info">
+                            <strong>Principianti</strong>
+                            <span>Elena</span>
                         </div>
                     </div>
-
-                    <div class="schedule-day" id="venerdi">
-                        <div class="schedule-item">
-                            <span class="time">10:00 - 11:00</span>
-                            <span class="course">Stretching & Flexibility</span>
-                            <span class="instructor">Sara</span>
-                        </div>
-                        <div class="schedule-item">
-                            <span class="time">18:00 - 19:15</span>
-                            <span class="course">Pole Intermedio</span>
-                            <span class="instructor">Giulia</span>
-                        </div>
-                        <div class="schedule-item">
-                            <span class="time">19:30 - 20:30</span>
-                            <span class="course">Aerial Hoop</span>
-                            <span class="instructor">Marco</span>
+                    <div class="lesson">
+                        <span class="time">19:30</span>
+                        <div class="lesson-info">
+                            <strong>Intermedio</strong>
+                            <span>Elena</span>
                         </div>
                     </div>
+                </div>
 
-                    <div class="schedule-day" id="sabato">
-                        <div class="schedule-item">
-                            <span class="time">10:00 - 11:00</span>
-                            <span class="course">Pole Principianti</span>
-                            <span class="instructor">Giulia</span>
+                <div class="schedule-day" id="gio">
+                    <div class="lesson">
+                        <span class="time">18:00</span>
+                        <div class="lesson-info">
+                            <strong>Exotic</strong>
+                            <span>Martina</span>
                         </div>
-                        <div class="schedule-item">
-                            <span class="time">11:15 - 12:30</span>
-                            <span class="course">Pole Intermedio</span>
-                            <span class="instructor">Marco</span>
+                    </div>
+                    <div class="lesson">
+                        <span class="time">19:30</span>
+                        <div class="lesson-info">
+                            <strong>Avanzato</strong>
+                            <span>Elena</span>
                         </div>
-                        <div class="schedule-item">
-                            <span class="time">12:45 - 13:45</span>
-                            <span class="course">Open Practice</span>
-                            <span class="instructor">-</span>
+                    </div>
+                </div>
+
+                <div class="schedule-day" id="ven">
+                    <div class="lesson">
+                        <span class="time">10:00</span>
+                        <div class="lesson-info">
+                            <strong>Flexibility</strong>
+                            <span>Sara</span>
+                        </div>
+                    </div>
+                    <div class="lesson">
+                        <span class="time">18:00</span>
+                        <div class="lesson-info">
+                            <strong>Principianti</strong>
+                            <span>Elena</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-day" id="sab">
+                    <div class="lesson">
+                        <span class="time">10:00</span>
+                        <div class="lesson-info">
+                            <strong>Open Level</strong>
+                            <span>Tutte</span>
+                        </div>
+                    </div>
+                    <div class="lesson">
+                        <span class="time">11:30</span>
+                        <div class="lesson-info">
+                            <strong>Aerial Hoop</strong>
+                            <span>Sara</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Prezzi Section -->
-    <section id="prezzi" class="prezzi">
-        <div class="container">
-            <h2 class="section-title">Abbonamenti</h2>
-            <p class="section-subtitle">Scegli la formula più adatta a te</p>
+        <!-- Pricing Section -->
+        <section id="prezzi" class="pricing">
+            <div class="section-header">
+                <span class="section-label">Prezzi</span>
+                <h2>Scegli il tuo <span>piano</span></h2>
+            </div>
 
-            <div class="prezzi-grid">
-                <div class="prezzo-card">
-                    <h3>Singola Lezione</h3>
-                    <div class="prezzo-amount">
-                        <span class="currency">€</span>
-                        <span class="price">20</span>
+            <div class="pricing-cards">
+                <div class="price-card">
+                    <h3>Singola</h3>
+                    <div class="price">
+                        <span class="currency">&euro;</span>
+                        <span class="amount">20</span>
                     </div>
-                    <ul class="prezzo-features">
-                        <li><i class="fas fa-check"></i> 1 lezione a scelta</li>
-                        <li><i class="fas fa-check"></i> Tutti i corsi</li>
-                        <li><i class="fas fa-check"></i> Nessun vincolo</li>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 1 lezione</li>
+                        <li><i class="fas fa-check"></i> Qualsiasi corso</li>
                     </ul>
-                    <a href="#prenota" class="btn btn-outline">Prenota</a>
                 </div>
 
-                <div class="prezzo-card">
-                    <h3>Carnet 10 Lezioni</h3>
-                    <div class="prezzo-amount">
-                        <span class="currency">€</span>
-                        <span class="price">150</span>
+                <div class="price-card">
+                    <h3>Carnet 10</h3>
+                    <div class="price">
+                        <span class="currency">&euro;</span>
+                        <span class="amount">150</span>
                     </div>
-                    <p class="prezzo-savings">Risparmi 50€</p>
-                    <ul class="prezzo-features">
+                    <span class="savings">Risparmi 50&euro;</span>
+                    <ul>
                         <li><i class="fas fa-check"></i> 10 lezioni</li>
-                        <li><i class="fas fa-check"></i> Validità 3 mesi</li>
+                        <li><i class="fas fa-check"></i> Validit&agrave; 3 mesi</li>
                         <li><i class="fas fa-check"></i> Tutti i corsi</li>
                     </ul>
-                    <a href="#prenota" class="btn btn-outline">Acquista</a>
                 </div>
 
-                <div class="prezzo-card featured">
-                    <div class="prezzo-badge">Consigliato</div>
-                    <h3>Abbonamento Mensile</h3>
-                    <div class="prezzo-amount">
-                        <span class="currency">€</span>
-                        <span class="price">99</span>
+                <div class="price-card featured">
+                    <span class="badge">Consigliato</span>
+                    <h3>Mensile</h3>
+                    <div class="price">
+                        <span class="currency">&euro;</span>
+                        <span class="amount">99</span>
                         <span class="period">/mese</span>
                     </div>
-                    <ul class="prezzo-features">
+                    <ul>
                         <li><i class="fas fa-check"></i> Lezioni illimitate</li>
                         <li><i class="fas fa-check"></i> Tutti i corsi</li>
-                        <li><i class="fas fa-check"></i> Open practice inclusa</li>
-                        <li><i class="fas fa-check"></i> Sconto 10% su workshop</li>
+                        <li><i class="fas fa-check"></i> Open Day inclusi</li>
+                        <li><i class="fas fa-check"></i> Priority booking</li>
                     </ul>
-                    <a href="#prenota" class="btn btn-primary">Abbonati</a>
                 </div>
 
-                <div class="prezzo-card">
-                    <h3>Abbonamento Annuale</h3>
-                    <div class="prezzo-amount">
-                        <span class="currency">€</span>
-                        <span class="price">899</span>
-                        <span class="period">/anno</span>
+                <div class="price-card">
+                    <h3>Trimestrale</h3>
+                    <div class="price">
+                        <span class="currency">&euro;</span>
+                        <span class="amount">249</span>
                     </div>
-                    <p class="prezzo-savings">2 mesi gratis!</p>
-                    <ul class="prezzo-features">
-                        <li><i class="fas fa-check"></i> Lezioni illimitate</li>
+                    <span class="savings">Risparmi 48&euro;</span>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 3 mesi illimitati</li>
                         <li><i class="fas fa-check"></i> Tutti i corsi</li>
                         <li><i class="fas fa-check"></i> Workshop inclusi</li>
-                        <li><i class="fas fa-check"></i> Merchandise omaggio</li>
                     </ul>
-                    <a href="#prenota" class="btn btn-outline">Abbonati</a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <h2 class="section-title">Cosa Dicono di Noi</h2>
+            <p class="pricing-note">La prima lezione di prova &egrave; sempre gratuita</p>
+        </section>
 
-            <div class="testimonials-slider">
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"Ho iniziato senza sapere nulla e dopo 6 mesi riesco a fare figure che mai avrei immaginato. Le istruttrici sono fantastiche!"</p>
-                    <div class="testimonial-author">
-                        <span class="author-name">Alessandra M.</span>
-                        <span class="author-info">Studentessa da 8 mesi</span>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"Ambiente accogliente e professionale. Mi sono sentita a mio agio fin dalla prima lezione. Consigliatissimo!"</p>
-                    <div class="testimonial-author">
-                        <span class="author-name">Francesca L.</span>
-                        <span class="author-info">Studentessa da 2 anni</span>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"Il pole dance ha cambiato il mio rapporto con il mio corpo. Più forte, più sicura. Grazie Pole Dance Aosta!"</p>
-                    <div class="testimonial-author">
-                        <span class="author-name">Chiara B.</span>
-                        <span class="author-info">Studentessa da 1 anno</span>
-                    </div>
-                </div>
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <div class="section-header light">
+                <span class="section-label">Recensioni</span>
+                <h2>Cosa dicono di <span>noi</span></h2>
             </div>
-        </div>
-    </section>
 
-    <!-- Prenota Section -->
-    <section id="prenota" class="prenota">
-        <div class="container">
-            <h2 class="section-title">Prenota la Tua Lezione di Prova</h2>
-            <p class="section-subtitle">La prima lezione è gratuita e senza impegno</p>
+            <div class="testimonial-scroll">
+                <blockquote class="testimonial">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Ho iniziato senza sapere nulla e dopo 6 mesi faccio figure che mai avrei immaginato!"</p>
+                    <footer>
+                        <strong>Alessandra M.</strong>
+                        <span>8 mesi di pratica</span>
+                    </footer>
+                </blockquote>
+
+                <blockquote class="testimonial">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Ambiente fantastico! Mi sento sempre a mio agio, zero giudizio."</p>
+                    <footer>
+                        <strong>Giulia T.</strong>
+                        <span>1 anno di pratica</span>
+                    </footer>
+                </blockquote>
+
+                <blockquote class="testimonial">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"La pole dance ha cambiato il rapporto con il mio corpo. Pi&ugrave; forte, pi&ugrave; sicura."</p>
+                    <footer>
+                        <strong>Chiara B.</strong>
+                        <span>1 anno di pratica</span>
+                    </footer>
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section id="prenota" class="booking">
+            <div class="section-header">
+                <span class="section-label">Prenota</span>
+                <h2>Inizia <span>oggi</span></h2>
+                <p>La prima lezione &egrave; gratuita e senza impegno</p>
+            </div>
 
             <form class="booking-form" id="bookingForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="nome">Nome *</label>
-                        <input type="text" id="nome" name="nome" required autocomplete="given-name" placeholder="Il tuo nome">
-                    </div>
-                    <div class="form-group">
-                        <label for="cognome">Cognome *</label>
-                        <input type="text" id="cognome" name="cognome" required autocomplete="family-name" placeholder="Il tuo cognome">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required autocomplete="email" placeholder="email@esempio.it">
-                    </div>
-                    <div class="form-group">
-                        <label for="telefono">Telefono *</label>
-                        <input type="tel" id="telefono" name="telefono" required autocomplete="tel" placeholder="333 123 4567">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="corso">Corso di Interesse *</label>
-                        <select id="corso" name="corso" required>
-                            <option value="">Seleziona un corso</option>
-                            <option value="principianti">Pole Dance Principianti</option>
-                            <option value="intermedio">Pole Dance Intermedio</option>
-                            <option value="avanzato">Pole Dance Avanzato</option>
-                            <option value="exotic">Exotic Pole</option>
-                            <option value="hoop">Aerial Hoop</option>
-                            <option value="stretching">Stretching & Flexibility</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="esperienza">Esperienza Precedente</label>
-                        <select id="esperienza" name="esperienza">
-                            <option value="nessuna">Nessuna esperienza</option>
-                            <option value="poca">Qualche lezione</option>
-                            <option value="media">1-2 anni</option>
-                            <option value="avanzata">Più di 2 anni</option>
-                        </select>
-                    </div>
-                </div>
                 <div class="form-group">
-                    <label for="messaggio">Messaggio (opzionale)</label>
-                    <textarea id="messaggio" name="messaggio" rows="4"></textarea>
+                    <input type="text" id="nome" name="nome" required placeholder=" " autocomplete="given-name">
+                    <label for="nome">Nome</label>
                 </div>
-                <div class="form-group checkbox-group">
+
+                <div class="form-group">
+                    <input type="text" id="cognome" name="cognome" required placeholder=" " autocomplete="family-name">
+                    <label for="cognome">Cognome</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required placeholder=" " autocomplete="email">
+                    <label for="email">Email</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="tel" id="telefono" name="telefono" required placeholder=" " autocomplete="tel">
+                    <label for="telefono">Telefono</label>
+                </div>
+
+                <div class="form-group">
+                    <select id="corso" name="corso" required>
+                        <option value="" disabled selected></option>
+                        <option value="principianti">Principianti</option>
+                        <option value="intermedio">Intermedio</option>
+                        <option value="avanzato">Avanzato</option>
+                        <option value="exotic">Exotic</option>
+                        <option value="aerial">Aerial Hoop</option>
+                        <option value="flexibility">Flexibility</option>
+                    </select>
+                    <label for="corso">Corso di interesse</label>
+                </div>
+
+                <div class="form-checkbox">
                     <input type="checkbox" id="privacy" name="privacy" required>
-                    <label for="privacy">Accetto la <a href="#">Privacy Policy</a> *</label>
+                    <label for="privacy">Accetto la <a href="#">privacy policy</a></label>
                 </div>
-                <button type="submit" class="btn btn-primary btn-large">Invia Richiesta</button>
+
+                <button type="submit" class="btn-submit">
+                    Prenota la prova gratuita
+                    <i class="fas fa-arrow-right"></i>
+                </button>
             </form>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contatti Section -->
-    <section id="contatti" class="contatti">
-        <div class="container">
-            <div class="contatti-grid">
-                <div class="contatti-info">
-                    <h2 class="section-title">Contattaci</h2>
-                    <p>Hai domande? Siamo qui per aiutarti!</p>
+        <!-- Contact Section -->
+        <section id="contatti" class="contact">
+            <div class="section-header light">
+                <span class="section-label">Contatti</span>
+                <h2>Dove <span>trovarci</span></h2>
+            </div>
 
-                    <div class="contatti-details">
-                        <div class="contatto-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4>Indirizzo</h4>
-                                <p>Via Roma 123, 11100 Aosta (AO)</p>
-                            </div>
-                        </div>
-                        <div class="contatto-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h4>Telefono</h4>
-                                <p><a href="tel:+390165123456">0165 123 456</a></p>
-                            </div>
-                        </div>
-                        <div class="contatto-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4>Email</h4>
-                                <p><a href="mailto:info@poledanceaosta.it">info@poledanceaosta.it</a></p>
-                            </div>
-                        </div>
-                        <div class="contatto-item">
-                            <i class="fas fa-clock"></i>
-                            <div>
-                                <h4>Orari Segreteria</h4>
-                                <p>Lun-Ven: 10:00-21:00<br>Sab: 9:00-14:00</p>
-                            </div>
-                        </div>
+            <div class="contact-cards">
+                <a href="https://maps.google.com" class="contact-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <strong>Indirizzo</strong>
+                        <span>Via Roma 123, 11100 Aosta</span>
                     </div>
+                </a>
 
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                <a href="tel:+390165123456" class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <strong>Telefono</strong>
+                        <span>0165 123 456</span>
                     </div>
-                </div>
+                </a>
 
-                <div class="contatti-map">
-                    <div class="map-placeholder">
-                        <i class="fas fa-map"></i>
-                        <span>Google Maps</span>
+                <a href="mailto:info@poledanceaosta.it" class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <strong>Email</strong>
+                        <span>info@poledanceaosta.it</span>
                     </div>
+                </a>
+
+                <a href="https://wa.me/390165123456" class="contact-card whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    <div>
+                        <strong>WhatsApp</strong>
+                        <span>Scrivici subito</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <i class="fas fa-map"></i>
+                    <span>Google Maps</span>
                 </div>
             </div>
-        </div>
-    </section>
+
+            <div class="social-section">
+                <p>Seguici sui social</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <a href="#" class="footer-logo">
-                        <span class="logo-icon"><i class="fas fa-spa"></i></span>
-                        <span class="logo-text">Pole Dance Aosta</span>
-                    </a>
-                    <p>Il tuo studio di pole dance e discipline aeree ad Aosta. Forza, grazia e fiducia in te stessa.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Link Utili</h4>
-                    <ul>
-                        <li><a href="#corsi">Corsi</a></li>
-                        <li><a href="#orari">Orari</a></li>
-                        <li><a href="#prezzi">Prezzi</a></li>
-                        <li><a href="#prenota">Prenota</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Corsi</h4>
-                    <ul>
-                        <li><a href="#">Pole Dance</a></li>
-                        <li><a href="#">Exotic Pole</a></li>
-                        <li><a href="#">Aerial Hoop</a></li>
-                        <li><a href="#">Stretching</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Legale</h4>
-                    <ul>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                        <li><a href="#">Termini e Condizioni</a></li>
-                    </ul>
-                </div>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <i class="fas fa-spa"></i>
+                <span>Pole Dance Aosta</span>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Pole Dance Aosta. Tutti i diritti riservati.</p>
-            </div>
+            <p>&copy; 2025 Pole Dance Aosta. Tutti i diritti riservati.</p>
+            <nav class="footer-links">
+                <a href="#">Privacy</a>
+                <a href="#">Termini</a>
+                <a href="#">Cookie</a>
+            </nav>
         </div>
     </footer>
 
-    <!-- Mobile Fixed CTA Bar -->
-    <div class="mobile-cta-bar">
-        <a href="tel:+390165123456" class="mobile-cta-btn call">
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav">
+        <a href="tel:+390165123456" class="nav-item">
             <i class="fas fa-phone"></i>
             <span>Chiama</span>
         </a>
-        <a href="#prenota" class="mobile-cta-btn book">
-            <i class="fas fa-calendar-check"></i>
+        <a href="#prenota" class="nav-item primary">
+            <i class="fas fa-calendar-plus"></i>
             <span>Prenota</span>
         </a>
-        <a href="https://wa.me/390165123456" class="mobile-cta-btn whatsapp">
+        <a href="https://wa.me/390165123456" class="nav-item">
             <i class="fab fa-whatsapp"></i>
             <span>WhatsApp</span>
         </a>
-    </div>
+    </nav>
 
     <script src="script.js"></script>
 </body>
