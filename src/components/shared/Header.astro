@@ -1,0 +1,209 @@
+---
+import Logo from './Logo.astro';
+import content from '../../data/content.json';
+
+interface Props {
+  variant?: 'light' | 'dark' | 'transparent';
+  logoColor?: string;
+}
+
+const { variant = 'light', logoColor } = Astro.props;
+
+const navItems = [
+  { href: '#chi-siamo', label: content.nav.about },
+  { href: '#corsi', label: content.nav.courses },
+  { href: '#insegnanti', label: content.nav.instructors },
+  { href: '#orari', label: content.nav.schedule },
+  { href: '#contatti', label: content.nav.contact }
+];
+---
+
+<header class={`header header--${variant}`}>
+  <div class="header__container">
+    <a href="#" class="header__logo">
+      <Logo size="small" color={logoColor} />
+    </a>
+
+    <button class="header__menu-toggle" aria-label="Apri menu" aria-expanded="false">
+      <span class="header__menu-icon"></span>
+    </button>
+
+    <nav class="header__nav" aria-label="Navigazione principale">
+      <ul class="header__nav-list">
+        {navItems.map(item => (
+          <li class="header__nav-item">
+            <a href={item.href} class="header__nav-link">{item.label}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .header--light {
+    background: rgba(255, 255, 255, 0.95);
+    color: #1a1a1a;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .header--dark {
+    background: rgba(26, 26, 26, 0.95);
+    color: #ffffff;
+  }
+
+  .header--transparent {
+    background: transparent;
+    color: #ffffff;
+  }
+
+  .header__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header__logo {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .header__menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .header__menu-icon,
+  .header__menu-icon::before,
+  .header__menu-icon::after {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: currentColor;
+    transition: transform 0.3s ease;
+  }
+
+  .header__menu-icon {
+    position: relative;
+  }
+
+  .header__menu-icon::before,
+  .header__menu-icon::after {
+    content: '';
+    position: absolute;
+    left: 0;
+  }
+
+  .header__menu-icon::before {
+    top: -7px;
+  }
+
+  .header__menu-icon::after {
+    top: 7px;
+  }
+
+  .header__nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: inherit;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .header__nav.is-open {
+    display: block;
+  }
+
+  .header__nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .header__nav-link {
+    display: block;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    color: inherit;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+    border-radius: 8px;
+  }
+
+  .header__nav-link:hover {
+    opacity: 0.7;
+  }
+
+  @media (min-width: 768px) {
+    .header__container {
+      padding: 0 2rem;
+    }
+
+    .header__menu-toggle {
+      display: none;
+    }
+
+    .header__nav {
+      display: block;
+      position: static;
+      background: transparent;
+      padding: 0;
+      box-shadow: none;
+    }
+
+    .header__nav-list {
+      flex-direction: row;
+      gap: 0.25rem;
+    }
+
+    .header__nav-link {
+      padding: 0.5rem 1rem;
+    }
+  }
+</style>
+
+<script>
+  const toggle = document.querySelector('.header__menu-toggle');
+  const nav = document.querySelector('.header__nav');
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = nav?.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  // Close menu when clicking on a link
+  document.querySelectorAll('.header__nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      nav?.classList.remove('is-open');
+      toggle?.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>

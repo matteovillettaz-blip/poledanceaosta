@@ -1,0 +1,348 @@
+---
+import BaseLanding from '../layouts/BaseLanding.astro';
+import Header from '../components/shared/Header.astro';
+import Footer from '../components/shared/Footer.astro';
+import GoogleMap from '../components/shared/GoogleMap.astro';
+import content from '../data/content.json';
+import '../styles/poc1.css';
+
+// Story-driven: Focus on transformation journey
+// Structure: Hook -> Journey Steps -> Stories -> Courses as Chapters -> Start CTA
+---
+
+<BaseLanding title="Pole Dance Aosta - Story-driven" pocStyle="poc1">
+  <Header variant="light" logoColor="#4A4A4A" />
+
+  <main>
+    <!-- Hero - Emotional Hook -->
+    <section class="hero" id="home">
+      <div class="hero__content">
+        <p class="hero__eyebrow">La tua storia inizia qui</p>
+        <h1 class="hero__title">Da "non ce la faro mai" a "guarda cosa so fare"</h1>
+        <p class="hero__subtitle">Ogni grande trasformazione inizia con un primo passo. Il tuo potrebbe essere oggi.</p>
+        <a href="#percorso" class="hero__cta">
+          Scopri il percorso
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <polyline points="19 12 12 19 5 12"></polyline>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Journey Steps -->
+    <section class="section" id="percorso">
+      <div class="section__container">
+        <header class="section__header">
+          <h2 class="section__title">Il tuo percorso con noi</h2>
+          <p class="section__subtitle">Non importa da dove parti. Conta dove vuoi arrivare.</p>
+        </header>
+
+        <div class="journey__timeline">
+          <div class="journey__step">
+            <div class="journey__step-number">1</div>
+            <div class="journey__step-content">
+              <h3>Arrivi come sei</h3>
+              <p>Nessuna esperienza richiesta. Nessun giudizio. Solo tu e la voglia di provare qualcosa di nuovo.</p>
+            </div>
+          </div>
+          <div class="journey__step">
+            <div class="journey__step-number">2</div>
+            <div class="journey__step-content">
+              <h3>Scopri la tua forza</h3>
+              <p>Settimana dopo settimana, ti stupirai di quello che il tuo corpo sa fare. Muscoli che non sapevi di avere.</p>
+            </div>
+          </div>
+          <div class="journey__step">
+            <div class="journey__step-number">3</div>
+            <div class="journey__step-content">
+              <h3>Trovi la tua espressione</h3>
+              <p>La pole diventa il tuo modo di esprimerti. Forza, grazia, sensualita - decidi tu cosa raccontare.</p>
+            </div>
+          </div>
+          <div class="journey__step">
+            <div class="journey__step-number">4</div>
+            <div class="journey__step-content">
+              <h3>Diventi parte della famiglia</h3>
+              <p>Non e solo sport. E una community di donne che si supportano, si ispirano, crescono insieme.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Transformation Story -->
+    <section class="section section--alt" id="storie">
+      <div class="section__container">
+        <header class="section__header">
+          <h2 class="section__title">Storie di trasformazione</h2>
+        </header>
+
+        <div class="story__card">
+          <div class="story__quote">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" opacity="0.2">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+            </svg>
+            <blockquote>
+              "Sono entrata che non riuscivo a fare una trazione. Dopo 6 mesi ho fatto il mio primo inverted. Ma la cosa piu bella? Ho scoperto una forza che non sapevo di avere - e non parlo solo di muscoli."
+            </blockquote>
+            <cite>— Martina, 34 anni</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Courses as Chapters -->
+    <section class="section" id="capitoli">
+      <div class="section__container">
+        <header class="section__header">
+          <h2 class="section__title">I capitoli del tuo percorso</h2>
+          <p class="section__subtitle">Ogni corso e un nuovo capitolo della tua storia</p>
+        </header>
+
+        <div class="chapters__grid">
+          {content.courses.list.map((course: any, index: number) => (
+            <article class="chapter__card">
+              <span class="chapter__number">Capitolo {index + 1}</span>
+              <h3 class="chapter__title">{course.name}</h3>
+              <p class="chapter__desc">{course.description}</p>
+              <span class="chapter__level">{course.level}</span>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Your Guides -->
+    <section class="section section--alt" id="guide">
+      <div class="section__container">
+        <header class="section__header">
+          <h2 class="section__title">Le tue guide</h2>
+          <p class="section__subtitle">Ti accompagneranno in ogni passo del percorso</p>
+        </header>
+        <div class="instructors__grid">
+          {content.instructors.list.map((instructor: any) => (
+            <article class="instructor-card">
+              <div class="instructor-card__image">{instructor.name.charAt(0)}</div>
+              <h3 class="instructor-card__name">{instructor.name}</h3>
+              <p class="instructor-card__role">{instructor.role}</p>
+              <p class="instructor-card__bio">{instructor.bio}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Start Your Story CTA -->
+    <section class="section" id="inizia">
+      <div class="section__container">
+        <div class="cta-block">
+          <h2 class="cta-block__title">Pronta a scrivere la tua storia?</h2>
+          <p class="cta-block__text">Il primo capitolo inizia con una lezione di prova. Nessun impegno, solo curiosita.</p>
+          <a href="#contatti" class="cta-block__button">Prenota la tua prova gratuita</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section--alt" id="contatti">
+      <div class="section__container">
+        <header class="section__header">
+          <h2 class="section__title">Iniziamo a conoscerci</h2>
+        </header>
+        <div class="contact__grid">
+          <div class="contact__form-wrapper">
+            <form class="contact__form" action="#" method="POST">
+              <label for="contact-name-1a" class="sr-only">Nome</label>
+              <input type="text" id="contact-name-1a" name="name" placeholder="Il tuo nome" class="contact__input" required />
+              <label for="contact-email-1a" class="sr-only">Email</label>
+              <input type="email" id="contact-email-1a" name="email" placeholder="La tua email" class="contact__input" required />
+              <label for="contact-message-1a" class="sr-only">Messaggio</label>
+              <textarea id="contact-message-1a" name="message" placeholder="Raccontaci di te..." class="contact__textarea" required></textarea>
+              <button type="submit" class="contact__submit">Inizia il dialogo</button>
+            </form>
+          </div>
+          <div class="contact__info">
+            <GoogleMap height="250px" borderRadius="0" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer variant="dark" />
+  <a href="/" class="back-to-hub" aria-label="Torna all'hub POC">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+  </a>
+</BaseLanding>
+
+<style>
+  .back-to-hub {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    width: 48px;
+    height: 48px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 1000;
+    transition: transform 0.2s ease;
+  }
+  .back-to-hub:hover { transform: scale(1.1); }
+
+  .hero__eyebrow {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #E8A0BF;
+    margin-bottom: 1rem;
+  }
+
+  /* Journey Timeline */
+  .journey__timeline {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .journey__step {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+  .journey__step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 50px;
+    width: 2px;
+    height: calc(100% - 20px);
+    background: linear-gradient(to bottom, #E8A0BF, #D4A5C9);
+  }
+  .journey__step-number {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #E8A0BF, #D4A5C9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+  }
+  .journey__step-content h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #4A4A4A;
+  }
+  .journey__step-content p {
+    color: #666;
+    line-height: 1.6;
+  }
+
+  /* Story Card */
+  .story__card {
+    max-width: 700px;
+    margin: 0 auto;
+    background: white;
+    padding: 3rem;
+    border-radius: 24px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  }
+  .story__quote svg {
+    color: #E8A0BF;
+    margin-bottom: 1rem;
+  }
+  .story__quote blockquote {
+    font-size: 1.25rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: #4A4A4A;
+    margin-bottom: 1.5rem;
+  }
+  .story__quote cite {
+    color: #E8A0BF;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  /* Chapters */
+  .chapters__grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+  @media (min-width: 640px) { .chapters__grid { grid-template-columns: repeat(2, 1fr); } }
+  .chapter__card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  }
+  .chapter__number {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #E8A0BF;
+    font-weight: 600;
+  }
+  .chapter__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0.5rem 0;
+    color: #4A4A4A;
+  }
+  .chapter__desc {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  .chapter__level {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: #F8E8E8;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    color: #4A4A4A;
+  }
+
+  /* CTA Block */
+  .cta-block {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #F8E8E8 0%, #E8E0F0 100%);
+    border-radius: 32px;
+  }
+  .cta-block__title {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
+    color: #4A4A4A;
+    margin-bottom: 1rem;
+  }
+  .cta-block__text {
+    color: #666;
+    margin-bottom: 2rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cta-block__button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #4A4A4A;
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .cta-block__button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+</style>

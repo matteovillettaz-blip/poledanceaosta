@@ -1,0 +1,317 @@
+---
+import BaseLanding from '../layouts/BaseLanding.astro';
+import Header from '../components/shared/Header.astro';
+import Footer from '../components/shared/Footer.astro';
+import GoogleMap from '../components/shared/GoogleMap.astro';
+import content from '../data/content.json';
+import '../styles/poc1.css';
+
+// Corso-centrica: Courses are the star
+// Structure: Mini Hero -> Courses (expanded) -> Course Details -> Schedule per Course -> Instructors linked -> CTA
+---
+
+<BaseLanding title="Pole Dance Aosta - Corso-centrica" pocStyle="poc1">
+  <Header variant="light" logoColor="#4A4A4A" />
+
+  <main>
+    <!-- Mini Hero - Direct to courses -->
+    <section class="hero hero--compact" id="home">
+      <div class="hero__content">
+        <h1 class="hero__title">Trova il corso perfetto per te</h1>
+        <p class="hero__subtitle">4 percorsi, tutti i livelli. Quale fa per te?</p>
+      </div>
+    </section>
+
+    <!-- Courses - Immediately, Expanded -->
+    <section class="section" id="corsi">
+      <div class="section__container">
+        <div class="courses-expanded">
+          {content.courses.list.map((course: any, index: number) => (
+            <article class="course-expanded" id={`corso-${index + 1}`}>
+              <div class="course-expanded__header">
+                <div class="course-expanded__icon">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                </div>
+                <div>
+                  <span class="course-expanded__level">{course.level}</span>
+                  <h2 class="course-expanded__title">{course.name}</h2>
+                </div>
+              </div>
+
+              <p class="course-expanded__desc">{course.description}</p>
+
+              <div class="course-expanded__details">
+                <div class="course-expanded__detail">
+                  <span class="course-expanded__detail-label">Durata lezione</span>
+                  <span class="course-expanded__detail-value">60 minuti</span>
+                </div>
+                <div class="course-expanded__detail">
+                  <span class="course-expanded__detail-label">Max partecipanti</span>
+                  <span class="course-expanded__detail-value">8 persone</span>
+                </div>
+                <div class="course-expanded__detail">
+                  <span class="course-expanded__detail-label">Frequenza</span>
+                  <span class="course-expanded__detail-value">2-3 volte/settimana</span>
+                </div>
+              </div>
+
+              <div class="course-expanded__schedule">
+                <h3>Quando si tiene</h3>
+                <div class="course-expanded__times">
+                  <span class="course-expanded__time">Lun 18:30</span>
+                  <span class="course-expanded__time">Mer 19:30</span>
+                  <span class="course-expanded__time">Ven 18:00</span>
+                </div>
+              </div>
+
+              <a href="#prenota" class="course-expanded__cta">
+                Prenota una prova
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Which course is for you? Quiz-like -->
+    <section class="section section--alt" id="quale-corso">
+      <div class="section__container">
+        <header class="section__header">
+          <h2 class="section__title">Non sai quale scegliere?</h2>
+          <p class="section__subtitle">Ecco una guida rapida</p>
+        </header>
+
+        <div class="course-matcher">
+          <div class="course-matcher__item">
+            <span class="course-matcher__if">Se non hai mai fatto pole...</span>
+            <span class="course-matcher__then">Pole Dance Beginner</span>
+          </div>
+          <div class="course-matcher__item">
+            <span class="course-matcher__if">Se sai gia fare qualche trick...</span>
+            <span class="course-matcher__then">Pole Dance Intermediate</span>
+          </div>
+          <div class="course-matcher__item">
+            <span class="course-matcher__if">Se vuoi lavorare sul flow e l'espressivita...</span>
+            <span class="course-matcher__then">Pole Exotic</span>
+          </div>
+          <div class="course-matcher__item">
+            <span class="course-matcher__if">Se vuoi migliorare flessibilita e preparazione...</span>
+            <span class="course-matcher__then">Stretching & Flexibility</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Instructors linked to courses -->
+    <section class="section" id="insegnanti">
+      <div class="section__container">
+        <header class="section__header">
+          <h2 class="section__title">Chi insegna cosa</h2>
+        </header>
+        <div class="instructors-courses">
+          {content.instructors.list.map((instructor: any) => (
+            <article class="instructor-course-card">
+              <div class="instructor-course-card__avatar">{instructor.name.charAt(0)}</div>
+              <div class="instructor-course-card__info">
+                <h3>{instructor.name}</h3>
+                <p class="instructor-course-card__teaches">Insegna: <strong>Beginner, Intermediate</strong></p>
+                <p class="instructor-course-card__bio">{instructor.bio}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing hint -->
+    <section class="section section--alt" id="prezzi">
+      <div class="section__container">
+        <div class="pricing-hint">
+          <h2 class="pricing-hint__title">Prezzi e abbonamenti</h2>
+          <p class="pricing-hint__text">Offriamo abbonamenti mensili, pacchetti lezioni e la possibilita di prova gratuita. Contattaci per un preventivo personalizzato.</p>
+          <a href="#prenota" class="pricing-hint__cta">Richiedi info prezzi</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Book a trial -->
+    <section class="section" id="prenota">
+      <div class="section__container">
+        <header class="section__header">
+          <h2 class="section__title">Prenota la tua prova gratuita</h2>
+          <p class="section__subtitle">Scegli il corso che ti interessa</p>
+        </header>
+
+        <div class="booking-form">
+          <form class="contact__form" action="#" method="POST">
+            <div class="booking-form__course-select">
+              <label for="course-select">Corso di interesse</label>
+              <select id="course-select" name="course" class="contact__input">
+                {content.courses.list.map((course: any) => (
+                  <option value={course.name}>{course.name}</option>
+                ))}
+              </select>
+            </div>
+            <label for="contact-name-1c" class="sr-only">Nome</label>
+            <input type="text" id="contact-name-1c" name="name" placeholder="Il tuo nome" class="contact__input" required />
+            <label for="contact-email-1c" class="sr-only">Email</label>
+            <input type="email" id="contact-email-1c" name="email" placeholder="La tua email" class="contact__input" required />
+            <label for="contact-phone-1c" class="sr-only">Telefono</label>
+            <input type="tel" id="contact-phone-1c" name="phone" placeholder="Il tuo telefono" class="contact__input" />
+            <button type="submit" class="contact__submit">Prenota la prova</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location -->
+    <section class="section section--alt" id="dove">
+      <div class="section__container">
+        <header class="section__header">
+          <h2 class="section__title">Dove siamo</h2>
+        </header>
+        <div class="location-card">
+          <GoogleMap height="300px" borderRadius="0" />
+          <div class="location-card__info">
+            <p><strong>Pole Dance Aosta</strong></p>
+            <p>Aosta, Valle d'Aosta</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer variant="dark" />
+  <a href="/" class="back-to-hub" aria-label="Torna all'hub POC">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+  </a>
+</BaseLanding>
+
+<style>
+  .back-to-hub {
+    position: fixed; bottom: 2rem; left: 2rem; width: 48px; height: 48px;
+    background: rgba(0, 0, 0, 0.8); color: white; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none; z-index: 1000; transition: transform 0.2s ease;
+  }
+  .back-to-hub:hover { transform: scale(1.1); }
+
+  /* Compact Hero */
+  .hero--compact {
+    min-height: 50vh;
+    padding-top: 8rem;
+  }
+
+  /* Expanded Courses */
+  .courses-expanded {
+    display: flex; flex-direction: column; gap: 2rem;
+  }
+  .course-expanded {
+    background: white; border-radius: 24px; padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  }
+  .course-expanded__header {
+    display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;
+  }
+  .course-expanded__icon {
+    width: 56px; height: 56px;
+    background: linear-gradient(135deg, #F8E8E8, #E8E0F0);
+    border-radius: 16px; display: flex; align-items: center; justify-content: center;
+    color: #E8A0BF; flex-shrink: 0;
+  }
+  .course-expanded__level {
+    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;
+    color: #E8A0BF; font-weight: 600;
+  }
+  .course-expanded__title {
+    font-size: 1.5rem; font-weight: 700; color: #4A4A4A; margin-top: 0.25rem;
+  }
+  .course-expanded__desc {
+    color: #666; line-height: 1.7; margin-bottom: 1.5rem;
+  }
+  .course-expanded__details {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+    padding: 1.5rem; background: #F8E8E8; border-radius: 16px; margin-bottom: 1.5rem;
+  }
+  .course-expanded__detail-label {
+    font-size: 0.75rem; color: #888; display: block; margin-bottom: 0.25rem;
+  }
+  .course-expanded__detail-value {
+    font-weight: 600; color: #4A4A4A;
+  }
+  .course-expanded__schedule h3 {
+    font-size: 0.875rem; color: #888; margin-bottom: 0.75rem;
+  }
+  .course-expanded__times { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+  .course-expanded__time {
+    padding: 0.5rem 1rem; background: white; border: 1px solid #E8E0F0;
+    border-radius: 50px; font-size: 0.875rem; color: #4A4A4A;
+  }
+  .course-expanded__cta {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.875rem 1.5rem; background: #4A4A4A; color: white;
+    border-radius: 50px; text-decoration: none; font-weight: 600;
+    transition: background 0.2s ease;
+  }
+  .course-expanded__cta:hover { background: #333; }
+
+  /* Course Matcher */
+  .course-matcher { max-width: 600px; margin: 0 auto; }
+  .course-matcher__item {
+    display: flex; flex-direction: column; gap: 0.5rem;
+    padding: 1.5rem; background: white; border-radius: 16px;
+    margin-bottom: 1rem; box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+  }
+  .course-matcher__if { color: #666; font-style: italic; }
+  .course-matcher__then {
+    font-weight: 700; color: #E8A0BF; font-size: 1.125rem;
+  }
+
+  /* Instructors Courses */
+  .instructors-courses { display: flex; flex-direction: column; gap: 1.5rem; }
+  .instructor-course-card {
+    display: flex; gap: 1.5rem; background: white; padding: 1.5rem;
+    border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  }
+  .instructor-course-card__avatar {
+    width: 64px; height: 64px; background: linear-gradient(135deg, #E8A0BF, #D4A5C9);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 1.5rem; font-weight: 700; flex-shrink: 0;
+  }
+  .instructor-course-card__info h3 { font-size: 1.125rem; color: #4A4A4A; margin-bottom: 0.25rem; }
+  .instructor-course-card__teaches { font-size: 0.875rem; color: #E8A0BF; margin-bottom: 0.5rem; }
+  .instructor-course-card__bio { color: #666; font-size: 0.875rem; line-height: 1.6; }
+
+  /* Pricing Hint */
+  .pricing-hint {
+    text-align: center; padding: 3rem; background: white; border-radius: 24px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  }
+  .pricing-hint__title { font-size: 1.5rem; font-weight: 700; color: #4A4A4A; margin-bottom: 1rem; }
+  .pricing-hint__text { color: #666; max-width: 500px; margin: 0 auto 1.5rem; line-height: 1.7; }
+  .pricing-hint__cta {
+    display: inline-block; padding: 0.875rem 1.5rem;
+    background: linear-gradient(135deg, #E8A0BF, #D4A5C9); color: white;
+    border-radius: 50px; text-decoration: none; font-weight: 600;
+  }
+
+  /* Booking Form */
+  .booking-form { max-width: 500px; margin: 0 auto; }
+  .booking-form__course-select { margin-bottom: 1rem; }
+  .booking-form__course-select label { display: block; font-size: 0.875rem; color: #666; margin-bottom: 0.5rem; }
+  .booking-form__course-select select { width: 100%; }
+
+  /* Location */
+  .location-card { background: white; border-radius: 24px; overflow: hidden; }
+  .location-card__info { padding: 1.5rem; text-align: center; color: #4A4A4A; }
+
+  @media (min-width: 768px) {
+    .course-expanded { padding: 2.5rem; }
+  }
+</style>

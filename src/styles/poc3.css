@@ -1,0 +1,483 @@
+/* POC 3: Sportivo Friendly
+   Palette: Magenta, Viola, Bianco
+   Font: Poppins
+   Mood: Energico ma inclusivo, dinamico
+*/
+
+.poc3 {
+  --color-primary: #E91E8C;
+  --color-secondary: #7B2D8E;
+  --color-accent: #FF6BB3;
+  --color-background: #FFFFFF;
+  --color-surface: #F8F8FA;
+  --color-dark: #1A1A2E;
+  --color-text: #1A1A2E;
+  --color-text-light: #4A4A5A;
+  --color-text-muted: #8A8A9A;
+
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+
+  --radius-small: 8px;
+  --radius-medium: 16px;
+  --radius-large: 24px;
+  --radius-full: 50px;
+
+  --shadow-colored: 0 8px 30px rgba(233, 30, 140, 0.2);
+  --shadow-dark: 0 8px 30px rgba(26, 26, 46, 0.15);
+
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+/* Header */
+.poc3 .header {
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.poc3 .header__nav-link {
+  font-weight: 500;
+  border-radius: var(--radius-full);
+}
+
+.poc3 .header__nav-link:hover {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+  opacity: 1;
+}
+
+/* Hero Section */
+.poc3 .hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 1rem 4rem;
+  background: linear-gradient(135deg, var(--color-dark) 0%, #2D1B4E 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.poc3 .hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 20% 80%, var(--color-primary) 0%, transparent 40%),
+    radial-gradient(circle at 80% 20%, var(--color-secondary) 0%, transparent 40%);
+  opacity: 0.3;
+}
+
+.poc3 .hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+.poc3 .hero__badge {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-full);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.poc3 .hero__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.poc3 .hero__title span {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.poc3 .hero__subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.poc3 .hero__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.poc3 .hero__cta:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: var(--shadow-colored);
+}
+
+/* Section Base */
+.poc3 .section {
+  padding: 5rem 1rem;
+}
+
+.poc3 .section--alt {
+  background: var(--color-surface);
+}
+
+.poc3 .section--dark {
+  background: var(--color-dark);
+  color: white;
+}
+
+.poc3 .section__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.poc3 .section__badge {
+  display: inline-block;
+  padding: 0.375rem 1rem;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.poc3 .section__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.poc3 .section__subtitle {
+  font-size: 1rem;
+  color: var(--color-text-light);
+  font-weight: 400;
+}
+
+.poc3 .section--dark .section__subtitle {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.poc3 .section__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* About Section */
+.poc3 .about__content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.poc3 .about__text {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--color-text-light);
+  margin-bottom: 2rem;
+}
+
+.poc3 .about__values {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.poc3 .about__value {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: white;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.poc3 .about__value::before {
+  content: '★';
+  color: var(--color-primary);
+  font-size: 0.75rem;
+}
+
+/* Courses Section */
+.poc3 .courses__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.poc3 .course-card {
+  background: white;
+  border: none;
+  border-radius: var(--radius-large);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.poc3 .course-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+}
+
+.poc3 .course-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-dark);
+}
+
+.poc3 .course-card__icon {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+  border-radius: var(--radius-medium);
+}
+
+.poc3 .course-card__title {
+  font-weight: 600;
+}
+
+.poc3 .course-card__level {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* Instructors Section */
+.poc3 .instructors__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.poc3 .instructor-card {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-large);
+}
+
+.poc3 .instructor-card__image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  box-shadow: var(--shadow-colored);
+}
+
+.poc3 .instructor-card__name {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.25rem;
+}
+
+.poc3 .instructor-card__role {
+  font-size: 0.875rem;
+  color: var(--color-accent);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.poc3 .instructor-card__bio {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+/* Schedule Section */
+.poc3 .schedule__wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.poc3 .schedule__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.poc3 .schedule__day-card {
+  background: white;
+  border-radius: var(--radius-medium);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.poc3 .schedule__day-card:hover {
+  transform: translateY(-4px);
+}
+
+.poc3 .schedule__day-name {
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.poc3 .schedule__day-classes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.poc3 .schedule__class {
+  font-size: 0.8125rem;
+  color: var(--color-text-light);
+  padding: 0.375rem;
+  background: var(--color-surface);
+  border-radius: var(--radius-small);
+}
+
+.poc3 .schedule__note {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+/* Contact Section */
+.poc3 .contact__grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.poc3 .contact__form-wrapper {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--radius-large);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.poc3 .contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.poc3 .contact__input,
+.poc3 .contact__textarea {
+  padding: 1rem 1.25rem;
+  border: 2px solid var(--color-surface);
+  border-radius: var(--radius-medium);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.poc3 .contact__input:focus,
+.poc3 .contact__textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.poc3 .contact__textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.poc3 .contact__submit {
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.poc3 .contact__submit:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-colored);
+}
+
+.poc3 .contact__info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.poc3 .contact__map {
+  border-radius: var(--radius-large);
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.poc3 .contact__social {
+  text-align: center;
+}
+
+/* Footer */
+.poc3 .footer {
+  background: var(--color-dark);
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .poc3 .section {
+    padding: 6rem 2rem;
+  }
+
+  .poc3 .contact__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .poc3 .section {
+    padding: 8rem 2rem;
+  }
+}

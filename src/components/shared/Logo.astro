@@ -1,0 +1,47 @@
+---
+interface Props {
+  size?: 'small' | 'medium' | 'large';
+  color?: string;
+}
+
+const { size = 'medium', color = 'currentColor' } = Astro.props;
+
+const sizes = {
+  small: 40,
+  medium: 60,
+  large: 80
+};
+
+const dimension = sizes[size];
+---
+
+<div class="logo">
+  <a href="/" aria-label="Pole Dance Aosta - Home">
+    <img
+      src="/logo.png"
+      alt="Pole Dance Aosta"
+      width={dimension}
+      height={dimension}
+      loading="eager"
+    />
+  </a>
+</div>
+
+<style>
+  .logo {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .logo a {
+    display: block;
+    line-height: 0;
+  }
+
+  .logo img {
+    display: block;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+</style>
