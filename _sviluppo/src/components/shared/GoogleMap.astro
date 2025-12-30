@@ -7,7 +7,8 @@ interface Props {
 const { height = '300px', borderRadius = '16px' } = Astro.props;
 
 // Mappa centrata su Località La Maladière 19, Saint-Christophe AO
-const mapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1391.5!2d7.3485!3d45.7425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4789214c7e5e5e5e%3A0x0!2zTG9jYWxpdMOgIExhIE1hbGFkacOocmUsIDE5!5e0!3m2!1sit!2sit!4v1703851234567!5m2!1sit!2sit";
+// Coordinate: 45.7452, 7.3550 (Saint-Christophe, Valle d'Aosta)
+const mapSrc = "https://www.google.com/maps?q=Località+La+Maladière+19,+11020+Saint-Christophe+AO,+Italy&output=embed";
 ---
 
 <div class="map-container" style={`--map-height: ${height}; --map-radius: ${borderRadius}`}>
