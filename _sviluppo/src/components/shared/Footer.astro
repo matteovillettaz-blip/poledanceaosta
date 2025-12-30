@@ -55,6 +55,7 @@ const { variant = 'dark' } = Astro.props;
 
     <div class="footer__bottom">
       <p class="footer__copyright">{content.footer.copyright}</p>
+      <p class="footer__piva">P.IVA: XXXXXXXXXXX</p>
       <p class="footer__made">{content.footer.madeWith}</p>
     </div>
   </div>
@@ -162,6 +163,7 @@ const { variant = 'dark' } = Astro.props;
   }
 
   .footer__copyright,
+  .footer__piva,
   .footer__made {
     font-size: 0.75rem;
     opacity: 0.6;

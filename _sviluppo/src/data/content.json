@@ -77,7 +77,7 @@
         "name": "Flessibilità",
         "description": "Stretching attivo e passivo per spaccate, ponte e mobilità generale.",
         "icon": "activity",
-        "level": "beginner",
+        "level": "all",
         "levelLabel": "Tutti i livelli",
         "duration": "90 min",
         "groupSize": "Max 6 persone",
@@ -175,7 +175,7 @@
       { "day": "Lunedì", "dayShort": "Lun", "classes": [
         { "time": "12:30", "name": "Pole Dance Base", "type": "beginner", "level": "beginner" },
         { "time": "18:00", "name": "Pole Dance Intermedio", "type": "intermediate", "level": "intermediate" },
-        { "time": "19:30", "name": "Exotic", "type": "exotic", "level": "intermediate" }
+        { "time": "19:30", "name": "Pole Exotic", "type": "exotic", "level": "intermediate" }
       ]},
       { "day": "Martedì", "dayShort": "Mar", "classes": [
         { "time": "18:00", "name": "Flessibilità", "type": "flex", "level": "beginner" },
@@ -184,7 +184,7 @@
       { "day": "Mercoledì", "dayShort": "Mer", "classes": [
         { "time": "12:30", "name": "Pole Dance Base", "type": "beginner", "level": "beginner" },
         { "time": "18:00", "name": "Pole Dance Intermedio", "type": "intermediate", "level": "intermediate" },
-        { "time": "19:30", "name": "Exotic", "type": "exotic", "level": "intermediate" }
+        { "time": "19:30", "name": "Pole Exotic", "type": "exotic", "level": "intermediate" }
       ]},
       { "day": "Giovedì", "dayShort": "Gio", "classes": [
         { "time": "18:00", "name": "Flessibilità", "type": "flex", "level": "beginner" },

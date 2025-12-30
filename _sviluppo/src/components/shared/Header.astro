@@ -172,9 +172,16 @@ const navItems = [
     top: 100%;
     left: 0;
     right: 0;
-    background: inherit;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     padding: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .header--dark .header__nav {
+    background: rgba(26, 26, 26, 0.98);
   }
 
   .header__nav.is-open {

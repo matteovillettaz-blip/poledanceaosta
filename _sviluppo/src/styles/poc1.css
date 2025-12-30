@@ -1342,6 +1342,16 @@ html {
   color: var(--color-text);
 }
 
+.poc1 .contact__info-row--link {
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.poc1 .contact__info-row--link:hover {
+  opacity: 0.7;
+}
+
 .poc1 .contact__info-row--small {
   font-size: 0.9rem;
   color: var(--color-text-light);
