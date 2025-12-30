@@ -1,5 +1,6 @@
 ---
 import BaseLanding from '../layouts/BaseLanding.astro';
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
 ---
 
 <BaseLanding title="Pole Dance Aosta - POC Hub">
@@ -10,7 +11,7 @@ import BaseLanding from '../layouts/BaseLanding.astro';
     </header>
 
     <div class="poc-grid">
-      <a href="/poc1" class="poc-card poc1">
+      <a href={`${base}poc1`} class="poc-card poc1">
         <span class="poc-number">01</span>
         <h2>Soft & Welcoming</h2>
         <p>Palette pastello, forme morbide, mood accogliente</p>
@@ -23,7 +24,7 @@ import BaseLanding from '../layouts/BaseLanding.astro';
         <span class="poc-type">Landing Page</span>
       </a>
 
-      <a href="/poc3" class="poc-card poc3">
+      <a href={`${base}poc3`} class="poc-card poc3">
         <span class="poc-number">03</span>
         <h2>Sportivo Friendly</h2>
         <p>Energico ma inclusivo, colori vivaci, forme dinamiche</p>
@@ -36,7 +37,7 @@ import BaseLanding from '../layouts/BaseLanding.astro';
         <span class="poc-type">Landing Page</span>
       </a>
 
-      <a href="/poc4" class="poc-card poc4">
+      <a href={`${base}poc4`} class="poc-card poc4">
         <span class="poc-number">04</span>
         <h2>Modern Warm</h2>
         <p>Minimal con tocco umano, griglia pulita, terracotta accent</p>
@@ -49,7 +50,7 @@ import BaseLanding from '../layouts/BaseLanding.astro';
         <span class="poc-type">Landing Page</span>
       </a>
 
-      <a href="/poc8" class="poc-card poc8">
+      <a href={`${base}poc8`} class="poc-card poc8">
         <span class="poc-number">08</span>
         <h2>Immersivo Parallax</h2>
         <p>Hero full-screen, animazioni scroll, effetto cinematico, sezioni che emergono</p>
@@ -68,31 +69,31 @@ import BaseLanding from '../layouts/BaseLanding.astro';
       <p class="variants-subtitle">Stesso stile visivo, 5 architetture informative diverse</p>
 
       <div class="variants-grid">
-        <a href="/poc1a" class="variant-card">
+        <a href={`${base}poc1a`} class="variant-card">
           <span class="variant-letter">A</span>
           <h3>Story-driven</h3>
           <p>Focus sul viaggio di trasformazione. Hook emotivo, timeline del percorso, storie di successo.</p>
         </a>
 
-        <a href="/poc1b" class="variant-card">
+        <a href={`${base}poc1b`} class="variant-card">
           <span class="variant-letter">B</span>
           <h3>Community-first</h3>
           <p>La social proof guida. Testimonianze in primo piano, numeri della community, Instagram feed.</p>
         </a>
 
-        <a href="/poc1c" class="variant-card">
+        <a href={`${base}poc1c`} class="variant-card">
           <span class="variant-letter">C</span>
           <h3>Corso-centrica</h3>
           <p>I corsi sono le star. Card espanse con dettagli, orari, guida "quale corso fa per te".</p>
         </a>
 
-        <a href="/poc1d" class="variant-card">
+        <a href={`${base}poc1d`} class="variant-card">
           <span class="variant-letter">D</span>
           <h3>Single-action</h3>
           <p>Ultra minimale, una sola CTA. Hero, 3 benefici, social proof, form di prenotazione.</p>
         </a>
 
-        <a href="/poc1e" class="variant-card">
+        <a href={`${base}poc1e`} class="variant-card">
           <span class="variant-letter">E</span>
           <h3>Problema-soluzione</h3>
           <p>Pain points prima, soluzioni dopo. "Ti riconosci?", trasformazioni before/after.</p>
@@ -105,21 +106,21 @@ import BaseLanding from '../layouts/BaseLanding.astro';
       <p class="variants-subtitle">Stesso stile e struttura, 3 toni di voce diversi</p>
 
       <div class="tone-grid">
-        <a href="/poc1-t1" class="tone-card">
+        <a href={`${base}poc1-t1`} class="tone-card">
           <span class="tone-label">T1</span>
           <h3>Intimo-emotivo</h3>
           <p class="tone-example">"Riscopri la donna che sei sempre stata"</p>
           <p class="tone-desc">Parla al cuore, metafore, trasformazione interiore, frasi poetiche</p>
         </a>
 
-        <a href="/poc1-t2" class="tone-card">
+        <a href={`${base}poc1-t2`} class="tone-card">
           <span class="tone-label">T2</span>
           <h3>Amichevole-diretto</h3>
           <p class="tone-example">"Vieni a provare, ti aspettiamo!"</p>
           <p class="tone-desc">Come un'amica, informale, frasi corte, zero fronzoli</p>
         </a>
 
-        <a href="/poc1-t3" class="tone-card">
+        <a href={`${base}poc1-t3`} class="tone-card">
           <span class="tone-label">T3</span>
           <h3>Empowering</h3>
           <p class="tone-example">"Il tuo corpo e piu forte di quanto pensi"</p>

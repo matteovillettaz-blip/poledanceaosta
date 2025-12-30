@@ -5,20 +5,21 @@ interface Props {
 }
 
 const { size = 'medium', color = 'currentColor' } = Astro.props;
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
 
 const sizes = {
   small: 40,
-  medium: 60,
-  large: 80
+  medium: 48,
+  large: 60
 };
 
 const dimension = sizes[size];
 ---
 
 <div class="logo">
-  <a href="/" aria-label="Pole Dance Aosta - Home">
+  <a href={base} aria-label="Pole Dance Aosta - Home">
     <img
-      src="/logo.png"
+      src={`${base}logo.png`}
       alt="Pole Dance Aosta"
       width={dimension}
       height={dimension}
@@ -40,8 +41,6 @@ const dimension = sizes[size];
 
   .logo img {
     display: block;
-    width: auto;
-    height: auto;
     object-fit: contain;
   }
 </style>

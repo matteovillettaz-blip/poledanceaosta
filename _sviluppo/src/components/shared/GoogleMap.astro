@@ -6,8 +6,8 @@ interface Props {
 
 const { height = '300px', borderRadius = '16px' } = Astro.props;
 
-// Placeholder embed - da sostituire con coordinate reali
-const mapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22259.03826068!2d7.3019!3d45.7373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478920ae44566b39%3A0x804fd3066e3e4e4e!2s11100%20Aosta%20AO!5e0!3m2!1sit!2sit!4v1234567890";
+// Mappa centrata su Località La Maladière 19, Saint-Christophe AO
+const mapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1391.5!2d7.3485!3d45.7425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4789214c7e5e5e5e%3A0x0!2zTG9jYWxpdMOgIExhIE1hbGFkacOocmUsIDE5!5e0!3m2!1sit!2sit!4v1703851234567!5m2!1sit!2sit";
 ---
 
 <div class="map-container" style={`--map-height: ${height}; --map-radius: ${borderRadius}`}>
