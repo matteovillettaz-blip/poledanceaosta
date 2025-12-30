@@ -1294,6 +1294,34 @@ html {
   background: linear-gradient(135deg, #C77878, #A082BE);
 }
 
+/* Notice per alternative demo */
+.poc1 .schedule__alternatives-notice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+  border: 2px dashed #f39c12;
+  border-radius: var(--radius-medium);
+  padding: 0.75rem 1.5rem;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.poc1 .schedule__alternatives-badge {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #d35400;
+}
+
+.poc1 .schedule__alternatives-text {
+  font-size: 0.9rem;
+  color: #7f6000;
+  font-weight: 500;
+}
+
 /* Toggle buttons migliorati */
 .poc1 .schedule__view-toggle {
   display: flex;
