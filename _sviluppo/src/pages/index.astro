@@ -347,11 +347,32 @@ import '../styles/poc1.css';
         ))}
       </div>
 
-      <!-- Cards per giorno -->
+      <!-- Toggle visualizzazione -->
+      <div class="schedule__view-toggle">
+        <button class="schedule__view-btn schedule__view-btn--active" data-view="cards" aria-pressed="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+          </svg>
+          Giorni
+        </button>
+        <button class="schedule__view-btn" data-view="grid" aria-pressed="false">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+          Orari
+        </button>
+      </div>
+
+      <!-- Vista Cards per giorno -->
       <div class="schedule__wrapper schedule__wrapper--cards" id="schedule-cards">
         <div class="schedule__cards-grid">
-          {content.schedule.weekly.map((day: any) => (
-            <div class="schedule__day-card">
+          {content.schedule.weekly.map((day: any, index: number) => (
+            <div class="schedule__day-card" data-day-index={index}>
               <div class="schedule__day-card-header">
                 <span class="schedule__day-card-name">{day.day}</span>
               </div>
@@ -366,8 +387,52 @@ import '../styles/poc1.css';
             </div>
           ))}
         </div>
-        <p class="schedule__note">{content.schedule.note}</p>
       </div>
+
+      <!-- Vista Griglia Temporale -->
+      <div class="schedule__wrapper schedule__wrapper--grid" id="schedule-grid" style="display: none;">
+        <div class="schedule__time-grid">
+          <table class="schedule__grid-table">
+            <thead>
+              <tr>
+                <th class="schedule__grid-header schedule__grid-header--time">Orario</th>
+                {content.schedule.weekly.map((day: any, index: number) => (
+                  <th class="schedule__grid-header" data-day-index={index}>{day.dayShort}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="schedule__grid-row">
+                <td class="schedule__grid-time">12:30</td>
+                <td class="schedule__grid-cell"><div class="schedule__grid-class schedule__grid-class--beginner">Base</div></td>
+                <td class="schedule__grid-cell schedule__grid-cell--empty">—</td>
+                <td class="schedule__grid-cell"><div class="schedule__grid-class schedule__grid-class--beginner">Base</div></td>
+                <td class="schedule__grid-cell schedule__grid-cell--empty">—</td>
+                <td class="schedule__grid-cell"><div class="schedule__grid-class schedule__grid-class--advanced">Avanzato</div></td>
+              </tr>
+              <tr class="schedule__grid-row">
+                <td class="schedule__grid-time">18:00</td>
+                <td class="schedule__grid-cell"><div class="schedule__grid-class schedule__grid-class--intermediate">Intermedio</div></td>
+                <td class="schedule__grid-cell"><div class="schedule__grid-class schedule__grid-class--flex">Flessibilità</div></td>
+                <td class="schedule__grid-cell"><div class="schedule__grid-class schedule__grid-class--intermediate">Intermedio</div></td>
+                <td class="schedule__grid-cell"><div class="schedule__grid-class schedule__grid-class--flex">Flessibilità</div></td>
+                <td class="schedule__grid-cell"><div class="schedule__grid-class schedule__grid-class--intermediate">Intermedio</div></td>
+              </tr>
+              <tr class="schedule__grid-row">
+                <td class="schedule__grid-time">19:30</td>
+                <td class="schedule__grid-cell"><div class="schedule__grid-class schedule__grid-class--exotic">Exotic</div></td>
+                <td class="schedule__grid-cell"><div class="schedule__grid-class schedule__grid-class--advanced">Avanzato</div></td>
+                <td class="schedule__grid-cell"><div class="schedule__grid-class schedule__grid-class--exotic">Exotic</div></td>
+                <td class="schedule__grid-cell"><div class="schedule__grid-class schedule__grid-class--advanced">Avanzato</div></td>
+                <td class="schedule__grid-cell"><div class="schedule__grid-class schedule__grid-class--beginner">Base</div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <p class="schedule__note">{content.schedule.note}</p>
+      <p class="schedule__weekend-note">Sabato e Domenica: chiuso</p>
     </div>
   </section>
 
@@ -468,5 +533,55 @@ import '../styles/poc1.css';
       }
     });
   });
+
+  // Schedule view toggle
+  const viewBtns = document.querySelectorAll('.schedule__view-btn');
+  const cardsView = document.getElementById('schedule-cards');
+  const gridView = document.getElementById('schedule-grid');
+
+  viewBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const view = btn.getAttribute('data-view');
+
+      // Update button states
+      viewBtns.forEach(b => {
+        b.classList.remove('schedule__view-btn--active');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      btn.classList.add('schedule__view-btn--active');
+      btn.setAttribute('aria-pressed', 'true');
+
+      // Toggle views
+      if (view === 'cards') {
+        cardsView.style.display = 'block';
+        gridView.style.display = 'none';
+      } else {
+        cardsView.style.display = 'none';
+        gridView.style.display = 'block';
+      }
+    });
+  });
+
+  // Highlight current day
+  const today = new Date().getDay();
+  // Convert: 0=Sun, 1=Mon... to our index: 0=Mon, 1=Tue...
+  const dayIndex = today === 0 ? -1 : today - 1; // -1 for weekend (no highlight)
+
+  if (dayIndex >= 0 && dayIndex <= 4) {
+    // Highlight in cards view
+    const dayCards = document.querySelectorAll('.schedule__day-card');
+    dayCards[dayIndex]?.classList.add('schedule__day-card--today');
+
+    // Highlight in grid view
+    const gridHeaders = document.querySelectorAll('.schedule__grid-header[data-day-index]');
+    gridHeaders[dayIndex]?.classList.add('schedule__grid-header--today');
+
+    // Highlight grid column cells
+    const gridRows = document.querySelectorAll('.schedule__grid-row');
+    gridRows.forEach(row => {
+      const cells = row.querySelectorAll('.schedule__grid-cell');
+      cells[dayIndex]?.classList.add('schedule__grid-cell--today');
+    });
+  }
 
   </script>

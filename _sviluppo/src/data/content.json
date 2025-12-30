@@ -165,11 +165,11 @@
     "subtitle": "Lezioni dalla pausa pranzo alla sera, trova il momento perfetto per te",
     "note": "Gli orari possono variare. Contattaci per confermare disponibilità e prenotare.",
     "courseTypes": [
-      { "id": "beginner", "label": "Pole Dance Base", "color": "#D4A5A5" },
-      { "id": "intermediate", "label": "Pole Dance Intermedio", "color": "#C9B8D9" },
-      { "id": "advanced", "label": "Pole Dance Avanzato", "color": "#B8A5D4" },
-      { "id": "exotic", "label": "Pole Exotic", "color": "#E8D4E8" },
-      { "id": "flex", "label": "Flessibilità", "color": "#B8D9C9" }
+      { "id": "beginner", "label": "Pole Dance Base", "color": "#C77878" },
+      { "id": "intermediate", "label": "Pole Dance Intermedio", "color": "#A082BE" },
+      { "id": "advanced", "label": "Pole Dance Avanzato", "color": "#8264AA" },
+      { "id": "exotic", "label": "Pole Exotic", "color": "#C896C8" },
+      { "id": "flex", "label": "Flessibilità", "color": "#64B48C" }
     ],
     "weekly": [
       { "day": "Lunedì", "dayShort": "Lun", "classes": [
