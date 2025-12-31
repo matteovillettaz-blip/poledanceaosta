@@ -56,6 +56,12 @@ html {
   background: rgba(212, 165, 165, 0.1);
 }
 
+.poc1 .header__nav-link.is-active {
+  color: var(--color-primary);
+  background: rgba(212, 165, 165, 0.15);
+  font-weight: 600;
+}
+
 /* Hero Section */
 .poc1 .hero {
   min-height: 100vh;
