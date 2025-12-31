@@ -2001,8 +2001,8 @@ html {
   }
 }
 
-/* ===== MOBILE SMALL (< 480px) ===== */
-@media (max-width: 479px) {
+/* ===== MOBILE (< 576px) ===== */
+@media (max-width: 576px) {
   /* Sezioni - padding ridotto */
   .poc1 .section {
     padding: 3rem 1rem;
@@ -2057,17 +2057,33 @@ html {
     font-size: 0.85rem;
   }
 
-  /* Course Cards */
+  /* Course Cards - Layout centrato su mobile */
   .poc1 .course-card {
     padding: 1.25rem;
+    text-align: center;
+  }
+
+  .poc1 .course-card__icon {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .poc1 .course-card__level {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .poc1 .course-card__title {
     font-size: 1.1rem;
   }
 
+  /* Nascondere descrizione su mobile - già disponibile in "Dettagli" */
   .poc1 .course-card__description {
-    font-size: 0.9rem;
+    display: none;
+  }
+
+  .poc1 .course-card__meta {
+    justify-content: center;
   }
 
   .poc1 .course-card__actions {

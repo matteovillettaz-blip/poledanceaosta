@@ -26,7 +26,7 @@ import '../styles/poc1.css';
         poster="/images/hero-poster.jpg"
       >
         <!-- SOSTITUIRE QUESTO SRC CON IL VIDEO DELLA PALESTRA -->
-        <source src="/videos/hero-placeholder.mp4" type="video/mp4" />
+        <source src={`${import.meta.env.BASE_URL}/videos/hero-placeholder.mp4`} type="video/mp4" />
         Il tuo browser non supporta i video HTML5.
       </video>
       <div class="hero__video-overlay"></div>
