@@ -482,6 +482,39 @@ html {
   box-shadow: 0 4px 15px rgba(225, 48, 108, 0.3);
 }
 
+/* Courses CTA */
+.poc1 .courses__cta-wrapper {
+  text-align: center;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+}
+
+.poc1 .courses__cta-text {
+  font-size: 1.1rem;
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+}
+
+.poc1 .courses__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #E1306C 0%, #C13584 50%, #833AB4 100%);
+  color: white;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.poc1 .courses__cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(225, 48, 108, 0.35);
+}
+
 /* Instructors Section */
 .poc1 .instructors__grid {
   display: grid;
