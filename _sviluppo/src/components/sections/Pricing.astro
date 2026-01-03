@@ -1,0 +1,322 @@
+---
+const plans = [
+  {
+    id: 'mono',
+    name: 'Mono',
+    subtitle: '1 disciplina',
+    price: 'XX',
+    period: '/mese',
+    description: 'Scegli la tua disciplina preferita e allenati senza limiti. Perfetto per chi vuole concentrarsi e progredire velocemente.',
+    features: [
+      'Accesso illimitato a 1 disciplina',
+      'Lezioni di gruppo (max 6 persone)',
+      'Prenotazione via app',
+      'Assicurazione inclusa'
+    ],
+    popular: false,
+    cta: 'Scegli Mono'
+  },
+  {
+    id: 'open',
+    name: 'Open',
+    subtitle: 'Tutte le discipline',
+    price: 'XX',
+    period: '/mese',
+    description: 'Accesso libero a tutti i corsi: pole, exotic, flessibilita. Per chi ama variare e vuole esplorare ogni stile.',
+    features: [
+      'Accesso illimitato a tutti i corsi',
+      'Pole Dance, Exotic e Flessibilita',
+      'Lezioni di gruppo (max 6 persone)',
+      'Prenotazione prioritaria',
+      'Assicurazione inclusa'
+    ],
+    popular: true,
+    cta: 'Scegli Open'
+  },
+  {
+    id: 'privata',
+    name: 'Privata',
+    subtitle: 'Lezione 1-to-1',
+    price: 'XX',
+    period: '/lezione',
+    description: 'Tu e l\'insegnante, un programma cucito su di te. Ideale per obiettivi specifici o per prepararti a una gara.',
+    features: [
+      'Lezione individuale personalizzata',
+      'Programma su misura',
+      'Orario flessibile',
+      'Preparazione gare',
+      'Video analisi tecnica'
+    ],
+    popular: false,
+    cta: 'Prenota Privata'
+  }
+];
+---
+
+<section class="pricing section section--dark" id="prezzi">
+  <div class="container">
+    <!-- Header -->
+    <div class="section__header" data-animate="fade-up">
+      <span class="section__subtitle">Prezzi & Abbonamenti</span>
+      <h2 class="section__title">Scegli il Piano<br/>Perfetto per Te</h2>
+      <p class="section__description">
+        Abbonamenti flessibili per ogni esigenza. Tutti includono assicurazione e accesso alla community.
+      </p>
+    </div>
+
+    <!-- Pricing Grid -->
+    <div class="pricing__grid">
+      {plans.map((plan, index) => (
+        <article
+          class={`pricing-card ${plan.popular ? 'pricing-card--popular' : ''}`}
+          data-plan={plan.id}
+          data-animate="fade-up"
+          style={`--delay: ${index * 0.15}s`}
+        >
+          {plan.popular && (
+            <div class="pricing-card__badge">Consigliato</div>
+          )}
+
+          <div class="pricing-card__header">
+            <span class="pricing-card__subtitle">{plan.subtitle}</span>
+            <h3 class="pricing-card__name">{plan.name}</h3>
+            <div class="pricing-card__price">
+              <span class="pricing-card__currency">€</span>
+              <span class="pricing-card__amount">{plan.price}</span>
+              <span class="pricing-card__period">{plan.period}</span>
+            </div>
+          </div>
+
+          <div class="pricing-card__body">
+            <p class="pricing-card__description">{plan.description}</p>
+
+            <ul class="pricing-card__features">
+              {plan.features.map(feature => (
+                <li class="pricing-card__feature">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="pricing-card__footer">
+            <a
+              href="https://www.instagram.com/poledanceaosta/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class={`btn ${plan.popular ? 'btn--gold' : 'btn--secondary'} btn--lg pricing-card__cta`}
+            >
+              {plan.cta}
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- Note -->
+    <p class="pricing__note" data-animate="fade-up">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="12" y1="16" x2="12" y2="12"></line>
+        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+      </svg>
+      <span>I prezzi sono indicativi. Contattaci per confermare le tariffe attuali e le promozioni disponibili.</span>
+    </p>
+  </div>
+</section>
+
+<style>
+  .pricing {
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-dark-light) 100%);
+  }
+
+  /* Grid */
+  .pricing__grid {
+    display: grid;
+    gap: var(--space-6);
+    margin-bottom: var(--space-10);
+  }
+
+  @media (min-width: 768px) {
+    .pricing__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .pricing__grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-8);
+    }
+  }
+
+  /* Card */
+  .pricing-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-dark-light);
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    transition: all var(--transition-base);
+    animation-delay: var(--delay, 0s);
+  }
+
+  .pricing-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .pricing-card--popular {
+    border-color: var(--color-gold);
+    background: linear-gradient(
+      180deg,
+      rgba(212, 175, 55, 0.1) 0%,
+      var(--bg-dark-light) 30%
+    );
+  }
+
+  .pricing-card--popular:hover {
+    border-color: var(--color-gold);
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.2);
+  }
+
+  .pricing-card__badge {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: var(--space-2) var(--space-5);
+    background: var(--gradient-gold);
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    color: var(--color-primary);
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+  }
+
+  .pricing-card__header {
+    padding: var(--space-8) var(--space-6) var(--space-6);
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .pricing-card--popular .pricing-card__header {
+    padding-top: var(--space-12);
+  }
+
+  .pricing-card__subtitle {
+    display: block;
+    font-size: var(--text-xs);
+    font-weight: var(--font-medium);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+    color: var(--color-accent);
+    margin-bottom: var(--space-2);
+  }
+
+  .pricing-card__name {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    color: var(--text-light);
+    margin-bottom: var(--space-4);
+  }
+
+  .pricing-card__price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: var(--space-1);
+  }
+
+  .pricing-card__currency {
+    font-size: var(--text-xl);
+    font-weight: var(--font-medium);
+    color: var(--text-muted);
+  }
+
+  .pricing-card__amount {
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    font-weight: var(--font-bold);
+    color: var(--text-light);
+  }
+
+  .pricing-card--popular .pricing-card__amount {
+    color: var(--color-gold);
+  }
+
+  .pricing-card__period {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+  }
+
+  .pricing-card__body {
+    flex: 1;
+    padding: var(--space-6);
+  }
+
+  .pricing-card__description {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-6);
+    text-align: center;
+  }
+
+  .pricing-card__features {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .pricing-card__feature {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--text-on-dark);
+  }
+
+  .pricing-card__feature svg {
+    flex-shrink: 0;
+    color: var(--color-accent);
+    margin-top: 2px;
+  }
+
+  .pricing-card--popular .pricing-card__feature svg {
+    color: var(--color-gold);
+  }
+
+  .pricing-card__footer {
+    padding: var(--space-6);
+    padding-top: 0;
+  }
+
+  .pricing-card__cta {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Note */
+  .pricing__note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    text-align: center;
+  }
+
+  .pricing__note svg {
+    flex-shrink: 0;
+    color: var(--color-accent);
+  }
+</style>

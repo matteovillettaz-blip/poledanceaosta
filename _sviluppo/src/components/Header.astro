@@ -1,0 +1,353 @@
+---
+const navLinks = [
+  { href: '#chi-siamo', label: 'Chi Siamo' },
+  { href: '#corsi', label: 'Corsi' },
+  { href: '#insegnanti', label: 'Insegnanti' },
+  { href: '#prezzi', label: 'Prezzi' },
+  { href: '#orari', label: 'Orari' },
+  { href: '#contatti', label: 'Contatti' },
+];
+---
+
+<header class="header" id="header">
+  <div class="header__container container">
+    <!-- Logo -->
+    <a href="#home" class="header__logo" aria-label="Pole Dance Aosta - Home">
+      <span class="header__logo-text">PDA</span>
+      <span class="header__logo-full">Pole Dance Aosta</span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="header__nav" aria-label="Navigazione principale">
+      <ul class="header__nav-list">
+        {navLinks.map(link => (
+          <li class="header__nav-item">
+            <a href={link.href} class="header__nav-link">{link.label}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <!-- Right Section -->
+    <div class="header__right">
+      <!-- Instagram Link -->
+      <a
+        href="https://www.instagram.com/poledanceaosta/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="header__social"
+        aria-label="Seguici su Instagram"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+      </a>
+
+      <!-- CTA Button (Desktop) -->
+      <a href="#contatti" class="header__cta btn btn--accent btn--sm">
+        Prova Gratuita
+      </a>
+
+      <!-- Mobile Menu Toggle -->
+      <button
+        class="header__toggle"
+        aria-label="Apri menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <span class="header__toggle-bar"></span>
+        <span class="header__toggle-bar"></span>
+        <span class="header__toggle-bar"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="header__mobile-menu" id="mobile-menu" aria-hidden="true">
+    <nav class="header__mobile-nav">
+      <ul class="header__mobile-list">
+        {navLinks.map(link => (
+          <li class="header__mobile-item">
+            <a href={link.href} class="header__mobile-link">{link.label}</a>
+          </li>
+        ))}
+      </ul>
+      <a href="#contatti" class="btn btn--accent btn--lg header__mobile-cta">
+        Prenota la Tua Prova Gratuita
+      </a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--z-fixed);
+    background-color: transparent;
+    transition: background-color var(--transition-base), box-shadow var(--transition-base);
+  }
+
+  .header.is-scrolled {
+    background-color: var(--bg-primary);
+    box-shadow: var(--shadow-md);
+  }
+
+  .header.is-scrolled .header__nav-link,
+  .header.is-scrolled .header__logo-text,
+  .header.is-scrolled .header__logo-full {
+    color: var(--text-primary);
+  }
+
+  .header.is-scrolled .header__social {
+    color: var(--text-primary);
+  }
+
+  .header.is-scrolled .header__toggle-bar {
+    background-color: var(--color-primary);
+  }
+
+  .header__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+  }
+
+  /* Logo */
+  .header__logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    text-decoration: none;
+    z-index: var(--z-above);
+  }
+
+  .header__logo-text {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--text-light);
+    transition: color var(--transition-base);
+  }
+
+  .header__logo-full {
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--text-light);
+    transition: color var(--transition-base);
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    .header__logo-full {
+      display: block;
+    }
+  }
+
+  /* Desktop Navigation */
+  .header__nav {
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    .header__nav {
+      display: block;
+    }
+  }
+
+  .header__nav-list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+  }
+
+  .header__nav-link {
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    position: relative;
+    padding: var(--space-2) 0;
+    transition: color var(--transition-base);
+  }
+
+  .header__nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-accent);
+    transition: width var(--transition-base);
+  }
+
+  .header__nav-link:hover::after {
+    width: 100%;
+  }
+
+  /* Right Section */
+  .header__right {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    z-index: var(--z-above);
+  }
+
+  .header__social {
+    color: var(--text-light);
+    transition: color var(--transition-base), transform var(--transition-fast);
+  }
+
+  .header__social:hover {
+    color: var(--color-accent);
+    transform: scale(1.1);
+  }
+
+  .header__cta {
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    .header__cta {
+      display: inline-flex;
+    }
+  }
+
+  /* Mobile Toggle */
+  .header__toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 28px;
+    height: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: var(--z-above);
+  }
+
+  @media (min-width: 1024px) {
+    .header__toggle {
+      display: none;
+    }
+  }
+
+  .header__toggle-bar {
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-light);
+    border-radius: 2px;
+    transition: all var(--transition-base);
+  }
+
+  .header__toggle.is-active .header__toggle-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .header__toggle.is-active .header__toggle-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .header__toggle.is-active .header__toggle-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Mobile Menu */
+  .header__mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--bg-dark);
+    z-index: var(--z-modal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-base), visibility var(--transition-base);
+  }
+
+  .header__mobile-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .header__mobile-nav {
+    text-align: center;
+    padding: var(--space-8);
+  }
+
+  .header__mobile-list {
+    margin-bottom: var(--space-10);
+  }
+
+  .header__mobile-item {
+    margin-bottom: var(--space-6);
+  }
+
+  .header__mobile-link {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: var(--font-medium);
+    color: var(--text-light);
+    transition: color var(--transition-base);
+  }
+
+  .header__mobile-link:hover {
+    color: var(--color-accent);
+  }
+
+  .header__mobile-cta {
+    margin-top: var(--space-8);
+  }
+</style>
+
+<script>
+  const header = document.getElementById('header');
+  const toggle = document.querySelector('.header__toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileLinks = document.querySelectorAll('.header__mobile-link');
+
+  // Scroll handler
+  const handleScroll = () => {
+    if (window.scrollY > 50) {
+      header?.classList.add('is-scrolled');
+    } else {
+      header?.classList.remove('is-scrolled');
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll);
+  handleScroll();
+
+  // Mobile menu toggle
+  toggle?.addEventListener('click', () => {
+    const isOpen = mobileMenu?.classList.toggle('is-open');
+    toggle.classList.toggle('is-active');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    mobileMenu?.setAttribute('aria-hidden', String(!isOpen));
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  // Close mobile menu on link click
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.remove('is-open');
+      toggle?.classList.remove('is-active');
+      toggle?.setAttribute('aria-expanded', 'false');
+      mobileMenu?.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    });
+  });
+</script>

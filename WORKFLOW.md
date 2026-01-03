@@ -19,22 +19,16 @@ pole-dance-aosta/              → REPO GIT
 
 ## Workflow di Lavoro
 
-### 1. Avviare il Dev Server
-```bash
-cd pole-dance-aosta/_sviluppo
-npm run dev
-```
-Il sito sarà su: `http://localhost:4321/poledanceaosta/`
 
-### 2. Fare Modifiche
+### Fare Modifiche
 - Contenuti (testi, prezzi): `src/data/content.json`
 - Struttura pagina: `src/pages/index.astro`
 - Stili: `src/styles/poc1.css`
 
-### 3. Prassi Prima del Push
+### Prassi Prima del Push
 **IMPORTANTE - Seguire sempre questi passaggi:**
 
-1. **Aprire il browser** su `localhost:4321/poledanceaosta/` per mostrare le modifiche
+1. **Aprire il browser** per mostrare le modifiche
 2. **Attendere conferma** dell'utente
 3. **Solo dopo conferma**, procedere con:
    - `git add -A`

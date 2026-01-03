@@ -1,0 +1,338 @@
+---
+const schedule = [
+  {
+    day: 'Lunedi',
+    classes: [
+      { time: '12:30', course: 'Pole Dance Base', type: 'base' },
+      { time: '18:00', course: 'Pole Dance Intermedio', type: 'intermedio' },
+      { time: '19:30', course: 'Pole Exotic', type: 'exotic' }
+    ]
+  },
+  {
+    day: 'Martedi',
+    classes: [
+      { time: '18:00', course: 'Flessibilita', type: 'flex' },
+      { time: '19:30', course: 'Pole Dance Avanzato', type: 'avanzato' }
+    ]
+  },
+  {
+    day: 'Mercoledi',
+    classes: [
+      { time: '12:30', course: 'Pole Dance Base', type: 'base' },
+      { time: '18:00', course: 'Pole Dance Intermedio', type: 'intermedio' },
+      { time: '19:30', course: 'Pole Exotic', type: 'exotic' }
+    ]
+  },
+  {
+    day: 'Giovedi',
+    classes: [
+      { time: '18:00', course: 'Flessibilita', type: 'flex' },
+      { time: '19:30', course: 'Pole Dance Avanzato', type: 'avanzato' }
+    ]
+  },
+  {
+    day: 'Venerdi',
+    classes: [
+      { time: '12:30', course: 'Pole Dance Avanzato', type: 'avanzato' },
+      { time: '18:00', course: 'Pole Dance Intermedio', type: 'intermedio' },
+      { time: '19:30', course: 'Pole Dance Base', type: 'base' }
+    ]
+  }
+];
+
+const legend = [
+  { type: 'base', label: 'Pole Dance Base', color: '#64B48C' },
+  { type: 'intermedio', label: 'Pole Dance Intermedio', color: '#A082BE' },
+  { type: 'avanzato', label: 'Pole Dance Avanzato', color: '#8264AA' },
+  { type: 'exotic', label: 'Pole Exotic', color: '#C896C8' },
+  { type: 'flex', label: 'Flessibilita', color: '#64B48C' }
+];
+---
+
+<section class="schedule section section--alt" id="orari">
+  <div class="container">
+    <!-- Header -->
+    <div class="section__header" data-animate="fade-up">
+      <span class="section__subtitle">Orari & Info</span>
+      <h2 class="section__title">Trova il Momento<br/>Perfetto per Te</h2>
+      <p class="section__description">
+        Lezioni dalla pausa pranzo alla sera. Max 6 persone per classe per un'attenzione personalizzata.
+      </p>
+    </div>
+
+    <!-- Legend -->
+    <div class="schedule__legend" data-animate="fade-up">
+      {legend.map(item => (
+        <div class="schedule__legend-item" style={`--color: ${item.color}`}>
+          <span class="schedule__legend-dot"></span>
+          <span class="schedule__legend-label">{item.label}</span>
+        </div>
+      ))}
+    </div>
+
+    <!-- Schedule Grid -->
+    <div class="schedule__grid">
+      {schedule.map((day, index) => (
+        <div
+          class="schedule__day"
+          data-day={day.day.toLowerCase()}
+          data-animate="fade-up"
+          style={`--delay: ${index * 0.1}s`}
+        >
+          <div class="schedule__day-header">
+            <h3 class="schedule__day-name">{day.day}</h3>
+          </div>
+          <div class="schedule__day-classes">
+            {day.classes.map(cls => (
+              <div class={`schedule__class schedule__class--${cls.type}`}>
+                <span class="schedule__class-time">{cls.time}</span>
+                <span class="schedule__class-name">{cls.course}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Notes -->
+    <div class="schedule__notes" data-animate="fade-up">
+      <div class="schedule__note">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        <span>Ogni lezione dura 90 minuti</span>
+      </div>
+      <div class="schedule__note">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        <span>Sabato e Domenica: chiuso</span>
+      </div>
+      <div class="schedule__note">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+        <span>Gli orari possono variare. Contattaci per confermare.</span>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="schedule__cta" data-animate="fade-up">
+      <a href="#contatti" class="btn btn--primary btn--lg">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        Prenota la Tua Lezione
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .schedule {
+    background-color: var(--bg-secondary);
+  }
+
+  /* Legend */
+  .schedule__legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-4) var(--space-6);
+    margin-bottom: var(--space-10);
+  }
+
+  .schedule__legend-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .schedule__legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: var(--radius-full);
+    background-color: var(--color);
+  }
+
+  .schedule__legend-label {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+  }
+
+  /* Grid */
+  .schedule__grid {
+    display: grid;
+    gap: var(--space-4);
+    margin-bottom: var(--space-10);
+  }
+
+  @media (min-width: 768px) {
+    .schedule__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .schedule__grid {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  /* Day Card */
+  .schedule__day {
+    background-color: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-base);
+    animation-delay: var(--delay, 0s);
+  }
+
+  .schedule__day:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .schedule__day-header {
+    padding: var(--space-4) var(--space-5);
+    background-color: var(--bg-dark);
+    text-align: center;
+  }
+
+  .schedule__day-name {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    color: var(--text-light);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+  }
+
+  .schedule__day-classes {
+    padding: var(--space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  /* Class Item */
+  .schedule__class {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--class-color, var(--color-accent));
+    background-color: var(--bg-secondary);
+    transition: all var(--transition-fast);
+  }
+
+  .schedule__class:hover {
+    transform: translateX(4px);
+  }
+
+  .schedule__class--base {
+    --class-color: #64B48C;
+  }
+
+  .schedule__class--intermedio {
+    --class-color: #A082BE;
+  }
+
+  .schedule__class--avanzato {
+    --class-color: #8264AA;
+  }
+
+  .schedule__class--exotic {
+    --class-color: #C896C8;
+  }
+
+  .schedule__class--flex {
+    --class-color: #64B48C;
+  }
+
+  .schedule__class-time {
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    color: var(--class-color);
+    margin-bottom: var(--space-1);
+  }
+
+  .schedule__class-name {
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--text-primary);
+  }
+
+  /* Notes */
+  .schedule__notes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-6);
+    margin-bottom: var(--space-10);
+    padding: var(--space-6);
+    background-color: var(--bg-primary);
+    border-radius: var(--radius-xl);
+  }
+
+  .schedule__note {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+  }
+
+  .schedule__note svg {
+    color: var(--color-accent);
+    flex-shrink: 0;
+  }
+
+  /* CTA */
+  .schedule__cta {
+    text-align: center;
+  }
+</style>
+
+<script>
+  // Highlight today's schedule
+  const days = ['domenica', 'lunedi', 'martedi', 'mercoledi', 'giovedi', 'venerdi', 'sabato'];
+  const today = days[new Date().getDay()];
+  const todayCard = document.querySelector(`[data-day="${today}"]`);
+
+  if (todayCard) {
+    todayCard.classList.add('schedule__day--today');
+    todayCard.querySelector('.schedule__day-header')?.insertAdjacentHTML(
+      'beforeend',
+      '<span class="schedule__day-badge">Oggi</span>'
+    );
+  }
+</script>
+
+<style>
+  .schedule__day--today {
+    border: 2px solid var(--color-accent);
+  }
+
+  .schedule__day-badge {
+    display: inline-block;
+    margin-left: var(--space-2);
+    padding: var(--space-1) var(--space-2);
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    color: var(--color-primary);
+    background-color: var(--color-accent);
+    border-radius: var(--radius-sm);
+  }
+</style>

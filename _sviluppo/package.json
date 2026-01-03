@@ -1,7 +1,7 @@
 {
-  "name": "pole-dance-aosta",
+  "name": "pole-dance-aosta-v2",
   "type": "module",
-  "version": "0.0.1",
+  "version": "2.0.0",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -9,6 +9,6 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.16.6"
+    "astro": "^5.1.1"
   }
 }
