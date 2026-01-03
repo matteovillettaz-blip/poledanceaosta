@@ -1,0 +1,226 @@
+{
+  "siteName": "Pole Dance Aosta",
+  "tagline": "Il primo studio di pole dance in Valle d'Aosta",
+  "phone": "+39 XXX XXX XXXX",
+  "email": "info@poledanceaosta.it",
+  "address": "Aosta, Valle d'Aosta",
+  "instagram": "https://www.instagram.com/poledanceaosta/",
+  "googleMapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2784.6!2d7.32!3d45.73!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDQzJzQ4LjAiTiA3wrAxOScxMi4wIkU!5e0!3m2!1sit!2sit!4v1234567890",
+
+  "hero": {
+    "title": "Pole Dance Aosta",
+    "subtitle": "Il primo studio di pole dance in Valle d'Aosta. Scopri la forza, l'eleganza e la libertà del tuo corpo.",
+    "cta": "Scopri i Corsi"
+  },
+
+  "about": {
+    "title": "Chi Siamo",
+    "description": "Pole Dance Aosta nasce nel 2019 dalla passione di Simona Spataro, il primo studio dedicato alla pole dance in Valle d'Aosta. Uno spazio con 6 pali dove praticare a ogni età, dalla pausa pranzo alla sera. Un ambiente accogliente dove ogni persona può esplorare il movimento, la forza e l'espressività del proprio corpo.",
+    "values": [
+      "6 pali professionali",
+      "Lezioni dalla pausa pranzo alla sera",
+      "Per tutte le età",
+      "Community supportiva"
+    ]
+  },
+
+  "courses": {
+    "title": "I Nostri Corsi",
+    "subtitle": "Pole dance, exotic e flessibilità. Dai primi passi al livello avanzato.",
+    "list": [
+      {
+        "id": "pole-dance",
+        "name": "Pole Dance Base",
+        "description": "Impara le basi: spin, climb, sit e i primi tricks. Non serve esperienza, solo voglia di mettersi in gioco!",
+        "icon": "star",
+        "level": "beginner",
+        "levelLabel": "Base",
+        "duration": "90 min",
+        "groupSize": "Max 6 persone",
+        "details": "Imparerai le basi della pole dance: spin, climb, sit e i primi tricks. Adatto a chi non ha mai provato. Non serve esperienza pregressa, solo voglia di mettersi in gioco!"
+      },
+      {
+        "id": "pole-inter",
+        "name": "Pole Dance Intermedio",
+        "description": "Inversioni, tricks aerei e combo più lunghe. Per chi ha già le basi solide e vuole progredire.",
+        "icon": "zap",
+        "level": "intermediate",
+        "levelLabel": "Intermedio",
+        "duration": "90 min",
+        "groupSize": "Max 6 persone",
+        "details": "Per chi ha già le basi solide. Lavoreremo su inversioni, tricks aerei e combo più lunghe. Requisito: saper fare climb e sit in sicurezza."
+      },
+      {
+        "id": "pole-advanced",
+        "name": "Pole Dance Avanzato",
+        "description": "Figure aeree avanzate, combo complesse e preparazione a gare. Il massimo livello tecnico.",
+        "icon": "trophy",
+        "level": "advanced",
+        "levelLabel": "Avanzato",
+        "duration": "90 min",
+        "groupSize": "Max 6 persone",
+        "details": "Per chi padroneggia inversioni e tricks intermedi. Lavoreremo su figure aeree avanzate, combo complesse e preparazione a gare. Requisito: inversioni sicure e buona resistenza."
+      },
+      {
+        "id": "exotic",
+        "name": "Pole Exotic",
+        "description": "Floorwork, wave e coreografie sensuali. Libera il tuo lato artistico ed espressivo.",
+        "icon": "heart",
+        "level": "all",
+        "levelLabel": "Tutti i livelli",
+        "duration": "90 min",
+        "groupSize": "Max 6 persone",
+        "details": "Heels obbligatori (anche per principianti dell'exotic). Focus su floorwork, wave, movimenti sensuali e coreografie. Libera la tua femminilità!"
+      },
+      {
+        "id": "flexibility",
+        "name": "Flessibilità",
+        "description": "Stretching attivo e passivo per spaccate, ponte e mobilità generale.",
+        "icon": "activity",
+        "level": "all",
+        "levelLabel": "Tutti i livelli",
+        "duration": "90 min",
+        "groupSize": "Max 6 persone",
+        "details": "Stretching attivo e passivo per migliorare spaccate, ponte e flessibilità generale. Perfetto come complemento alla pole o come corso singolo."
+      }
+    ]
+  },
+
+  "pricing": {
+    "title": "Prezzi & Abbonamenti",
+    "subtitle": "Scegli l'abbonamento perfetto per te",
+    "monthlyLimited": {
+      "title": "Mono",
+      "price": "XX",
+      "period": "/mese",
+      "description": "Scegli la tua disciplina preferita e allenati senza limiti. Perfetto per chi vuole concentrarsi e progredire velocemente.",
+      "features": [],
+      "cta": "Info"
+    },
+    "monthlyOpen": {
+      "title": "Open",
+      "price": "XX",
+      "period": "/mese",
+      "description": "Accesso libero a tutti i corsi: pole, exotic, flessibilità. Per chi ama variare e vuole esplorare ogni stile.",
+      "features": [],
+      "cta": "Info"
+    },
+    "private": {
+      "title": "Privata",
+      "price": "XX",
+      "period": "/lezione",
+      "description": "Tu e l'insegnante, un programma cucito su di te. Ideale per obiettivi specifici o per prepararti a una gara.",
+      "features": [],
+      "cta": "Prenota"
+    },
+    "freeTrial": {
+      "title": "Prima Lezione Gratuita",
+      "description": "Vieni a provare senza impegno. Scopri se la pole dance fa per te!",
+      "cta": "Prenota la tua prova gratuita"
+    }
+  },
+
+  "instructors": {
+    "title": "Le Nostre Insegnanti",
+    "subtitle": "Campionesse e professioniste pronte a guidarti",
+    "list": [
+      {
+        "id": "simona",
+        "name": "Simona Spataro",
+        "role": "Fondatrice & Head Instructor",
+        "bioShort": "Campionessa italiana 2017, finalista ai Mondiali Ultrapole 2019. Co-founder di Polescape.",
+        "bioFull": "Ginnasta fin dalla tenera età, si innamora della pole dance nel 2014. Nel 2017 vince il 1° posto all'Italian Pole Dance Contest, partecipa a gare nazionali e internazionali fino ai Mondiali Ultrapole 2019 in Canada. Ama combinare elementi di flow a tricks dinamici. Nel 2019 fonda Pole Dance Aosta e tiene workshop in tutta Italia. Co-founder di Polescape, pole retreats in giro per il mondo.",
+        "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=face",
+        "instagram": "https://www.instagram.com/simonaspataro_pole/",
+        "specializations": ["Pole Sport", "Tricks", "Workshop"],
+        "achievements": ["1° Italian Pole Dance Contest 2017", "Mondiali Ultrapole 2019 Canada", "Co-founder Polescape"]
+      },
+      {
+        "id": "nicole",
+        "name": "Nicole Carere",
+        "role": "Istruttrice Pole Dance & Exotic",
+        "bioShort": "Plurimedagliata in competizioni nazionali di pole dance e pole exotic.",
+        "bioFull": "Background nella ginnastica artistica, ha conquistato diverse medaglie in competizioni di pole dance e pole exotic a livello nazionale. La sua energia contagiosa e la passione per l'insegnamento rendono ogni lezione un'esperienza unica. Specializzata in exotic e floorwork.",
+        "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face",
+        "instagram": "https://www.instagram.com/nicolecarere_pole/",
+        "specializations": ["Exotic", "Floorwork", "Coreografie"],
+        "achievements": ["Medaglie gare Pole Dance", "Medaglie gare Pole Exotic"]
+      },
+      {
+        "id": "federica",
+        "name": "Federica Armand",
+        "role": "Istruttrice Pole Dance & Exotic",
+        "bioShort": "Atleta e insegnante, guida allieve di ogni livello con pazienza e professionalità.",
+        "bioFull": "Con un solido background nella ginnastica, ha vinto diverse medaglie nelle categorie pole dance e pole exotic. La sua pazienza e attenzione ai dettagli la rendono perfetta per guidare allieve di ogni livello, dalle principianti alle avanzate. Ama creare coreografie che valorizzino lo stile personale di ogni allieva.",
+        "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face",
+        "instagram": "https://www.instagram.com/federicaarmand_pole/",
+        "specializations": ["Pole Dance", "Flessibilità", "Beginners"],
+        "achievements": ["Medaglie gare Pole Dance", "Medaglie gare Pole Exotic"]
+      }
+    ]
+  },
+
+  "schedule": {
+    "title": "Orari & Info",
+    "subtitle": "Lezioni dalla pausa pranzo alla sera, trova il momento perfetto per te",
+    "note": "Gli orari possono variare. Contattaci per confermare disponibilità e prenotare.",
+    "courseTypes": [
+      { "id": "beginner", "label": "Pole Dance Base", "color": "#C77878" },
+      { "id": "intermediate", "label": "Pole Dance Intermedio", "color": "#A082BE" },
+      { "id": "advanced", "label": "Pole Dance Avanzato", "color": "#8264AA" },
+      { "id": "exotic", "label": "Pole Exotic", "color": "#C896C8" },
+      { "id": "flex", "label": "Flessibilità", "color": "#64B48C" }
+    ],
+    "weekly": [
+      { "day": "Lunedì", "dayShort": "Lun", "classes": [
+        { "time": "12:30", "name": "Pole Dance Base", "type": "beginner", "level": "beginner" },
+        { "time": "18:00", "name": "Pole Dance Intermedio", "type": "intermediate", "level": "intermediate" },
+        { "time": "19:30", "name": "Pole Exotic", "type": "exotic", "level": "intermediate" }
+      ]},
+      { "day": "Martedì", "dayShort": "Mar", "classes": [
+        { "time": "18:00", "name": "Flessibilità", "type": "flex", "level": "beginner" },
+        { "time": "19:30", "name": "Pole Dance Avanzato", "type": "advanced", "level": "advanced" }
+      ]},
+      { "day": "Mercoledì", "dayShort": "Mer", "classes": [
+        { "time": "12:30", "name": "Pole Dance Base", "type": "beginner", "level": "beginner" },
+        { "time": "18:00", "name": "Pole Dance Intermedio", "type": "intermediate", "level": "intermediate" },
+        { "time": "19:30", "name": "Pole Exotic", "type": "exotic", "level": "intermediate" }
+      ]},
+      { "day": "Giovedì", "dayShort": "Gio", "classes": [
+        { "time": "18:00", "name": "Flessibilità", "type": "flex", "level": "beginner" },
+        { "time": "19:30", "name": "Pole Dance Avanzato", "type": "advanced", "level": "advanced" }
+      ]},
+      { "day": "Venerdì", "dayShort": "Ven", "classes": [
+        { "time": "12:30", "name": "Pole Dance Avanzato", "type": "advanced", "level": "advanced" },
+        { "time": "18:00", "name": "Pole Dance Intermedio", "type": "intermediate", "level": "intermediate" },
+        { "time": "19:30", "name": "Pole Dance Base", "type": "beginner", "level": "beginner" }
+      ]}
+    ]
+  },
+
+  "contact": {
+    "title": "Contattaci",
+    "subtitle": "Hai domande? Vuoi prenotare una prova? Siamo qui per te!",
+    "formLabels": {
+      "name": "Nome",
+      "email": "Email",
+      "message": "Messaggio",
+      "submit": "Invia Messaggio"
+    }
+  },
+
+  "footer": {
+    "copyright": "© 2025 Pole Dance Aosta. Tutti i diritti riservati.",
+    "madeWith": "Il primo studio di pole dance in Valle d'Aosta - dal 2019"
+  },
+
+  "nav": {
+    "home": "Home",
+    "about": "Chi Siamo",
+    "courses": "Corsi",
+    "pricing": "Prezzi",
+    "instructors": "Insegnanti",
+    "schedule": "Orari",
+    "contact": "Contatti"
+  }
+}
